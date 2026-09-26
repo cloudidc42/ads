@@ -262,6 +262,19 @@ Engagement Campaign เดี่ยวๆ ที่ไม่มีขั้น�
 
 **คำเตือนสำคัญ:** ตัวเลขเหล่านี้เป็น**แนวทางอ้างอิงกว้างๆ เท่านั้น** ผันผวนมากตามอุตสาหกรรม กลุ่มเป้าหมาย และคุณภาพ Creative จริง ไม่ควรยึดเป็นมาตรฐานตายตัวและนำไปเทียบข้ามธุรกิจโดยไม่ดูบริบท ควรสร้าง Benchmark ของตัวเองจากข้อมูลสะสมในบัญชีนั้นๆ
 
+### เจาะลึกเพิ่ม: การเทียบ Benchmark ข้าม Placement
+
+Cost per ThruPlay มักต่างกันมากระหว่าง Placement แม้อยู่ในแคมเปญเดียวกัน ให้เปิด Breakdown by Placement (ปุ่ม "Breakdown" มุมบนตาราง → เลือก "By Delivery" → "Placement") เพื่อดูว่า Reels, Stories, Feed แต่ละที่ให้ผลลัพธ์ต่างกันอย่างไร โดยทั่วไป:
+
+| Placement | ลักษณะทั่วไปของ ThruPlay Rate |
+|---|---|
+| Reels | สูงที่สุด (Full-screen, Autoplay, บริบทเหมาะกับวิดีโอสั้น) |
+| Stories | สูง (คล้าย Reels แต่ระยะเวลาการดูสั้นกว่าเล็กน้อย) |
+| Feed | ปานกลาง (ปนกับ Content อื่น การแข่งขันความสนใจสูงกว่า) |
+| Audience Network | ต่ำที่สุดโดยทั่วไป (คุณภาพผู้ใช้และบริบทแอปที่แสดงหลากหลาย) |
+
+หากพบว่า Audience Network ดึง Cost per ThruPlay ให้แพงขึ้นผิดปกติหรือมี Retention Curve ที่แย่กว่าอย่างชัดเจน ให้พิจารณาตัดออกด้วย Manual Placement เช่นเดียวกับหลักการที่เรียนในการแก้ปัญหา Traffic คุณภาพต่ำที่ Part 022 Step 217
+
 ### วิธีเปิดดู Metric เหล่านี้ใน Ads Manager
 
 กดปุ่ม **"Columns" → "Customize columns"** ค้นหาคำว่า "ThruPlay", "Cost per ThruPlay", "Video Average Watch Time", "Post Engagement", "Cost per Post Engagement" ติ๊กเลือกแล้ว Apply บันทึกเป็น Preset ชื่อ "Engagement Report" เพื่อสลับดูได้เร็ว
