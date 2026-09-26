@@ -49,6 +49,8 @@ Custom Audience คือหัวใจของทุกกลยุทธ์ 
 | Instant Experience | Meta Sources | Step 464 |
 | Events | Meta Sources | Step 464 (สำหรับธุรกิจที่ใช้ Facebook Events Feature) |
 
+การเข้าใจภาพรวมนี้ตั้งแต่ต้น Part ช่วยให้เวลาลงรายละเอียดแต่ละ Step ต่อจากนี้ จะเห็นว่าแต่ละแหล่งข้อมูลไม่ได้แยกจากกันโดยสิ้นเชิง แต่เป็นชิ้นส่วนที่ประกอบกันเป็นระบบ Data Infrastructure เดียวของธุรกิจ ยิ่งมีแหล่งข้อมูลหลากหลายและดูแลรักษาให้สดใหม่สม่ำเสมอ ยิ่งทำให้ทั้ง Retargeting (Part 049) และ Lookalike (Part 048) ทำงานได้แม่นยำขึ้นตามไปด้วย
+
 ### หลักการเลือกใช้แหล่งข้อมูลให้ตรงกับเป้าหมาย
 
 ก่อนสร้าง Custom Audience ทุกครั้ง ควรตอบคำถาม 3 ข้อนี้ก่อน:
@@ -56,6 +58,10 @@ Custom Audience คือหัวใจของทุกกลยุทธ์ 
 1. **เรามีข้อมูลอะไรอยู่แล้วบ้าง** — Pixel ติดตั้งแล้วหรือยัง, มีฐานลูกค้าเก่าเป็น CSV หรือไม่, เพจมีคน Engage มากพอหรือไม่
 2. **ต้องการใช้ Custom Audience นี้ทำอะไร** — Retargeting (ต้องการคนที่ Interest สูงล่าสุด), เป็น Seed สำหรับ Lookalike (ต้องการคุณภาพสูงมากกว่าปริมาณ), หรือเป็น Exclusion (ต้องการรายชื่อคนที่ไม่ต้องการยิงซ้ำ)
 3. **ความสดของข้อมูลสำคัญแค่ไหน** — Website Custom Audience Refresh อัตโนมัติทุกวัน แต่ Customer List ต้องอัปโหลดใหม่มือทุกครั้งที่ต้องการอัปเดต
+
+### ลำดับความสำคัญที่แนะนำสำหรับธุรกิจที่เริ่มต้นใหม่
+
+ถ้าธุรกิจยังไม่มี Custom Audience เลยและต้องเลือกว่าจะสร้างอะไรก่อน แนะนำลำดับนี้: (1) Website Custom Audience จาก Purchase Event ก่อนเสมอ เพราะใช้เป็น Exclusion หลักได้ทันที (2) Website Custom Audience จาก All Visitors เพื่อเริ่มเก็บ Pool สำหรับ Retargeting (3) Page/IG Engagement เพราะสร้างได้ทันทีแม้ยังไม่มี Pixel Data มากพอ (4) Customer List ถ้ามีฐานลูกค้าเก่าอยู่แล้วในมือ การเรียงลำดับแบบนี้ทำให้ได้ Exclusion ที่จำเป็นก่อน ป้องกันงบเสียเปล่าตั้งแต่วันแรกที่เริ่มทำ Custom Audience อย่างจริงจัง
 
 ### Custom Audience Dashboard และการอ่านสถานะ
 
@@ -250,6 +256,12 @@ Audience กลุ่ม "เปิดแต่ไม่ส่ง" เป็น�
 ### วิธีสร้าง
 
 Create Audience → Custom Audience → **App Activity** → เลือกแอปที่เชื่อมกับ Business Manager แล้ว → เลือก Event ที่ต้องการ (ดึงมาจาก App Events ที่ตั้งค่าไว้ใน Events Manager เหมือนกับ Pixel Events) → ตั้ง Time Window → ตั้งชื่อ → Create
+
+ก่อนจะเห็นแอปในดรอปดาวน์ให้เลือกได้ ต้องผ่านขั้นตอนเชื่อมแอปเข้า Business Manager ก่อน (Business Settings → Data Sources → Apps → Add) และติดตั้ง Meta SDK ในโค้ดแอปจริงพร้อมยืนยันว่า Event ยิงเข้ามาถูกต้องผ่าน Events Manager → App Events แบบเดียวกับที่ตรวจ Pixel Event ใน Part 015 ถ้ายังไม่เห็น Event เข้ามาเลย ให้ตรวจสอบกับทีม Developer ว่า SDK Initialize ถูกต้องหรือไม่ก่อนไปโทษว่า Custom Audience สร้างไม่ได้
+
+### ความแตกต่างจาก Website Custom Audience ที่ควรรู้
+
+App Activity Custom Audience อิง Device/Advertiser ID (เช่น GAID บน Android หรือ IDFA บน iOS) ไม่ใช่ Browser Cookie แบบ Pixel ซึ่งหมายความว่าได้รับผลกระทบจาก App Tracking Transparency (ATT) ของ Apple โดยตรงมากกว่า Pixel เว็บไซต์เสียอีก เพราะผู้ใช้ iOS ที่ปฏิเสธ Tracking จะไม่มี IDFA ให้ระบบใช้เก็บสัญญาณเลย ทำให้ App Activity Audience ของผู้ใช้ iOS มักเล็กกว่าที่ควรจะเป็นมาก ธุรกิจที่พึ่งพาแอปเป็นหลักจึงต้องให้ความสำคัญกับการยิง Server-side Events ผ่าน Conversions API for App เพิ่มเติม เพื่อชดเชยสัญญาณที่หายไปจากฝั่ง Client เพียงอย่างเดียว
 
 ### กรณีใช้งานที่พบบ่อย
 
@@ -582,3 +594,7 @@ Part นี้ปูพื้น Custom Audience ครบทุกแหล่�
 - Meta for Developers: เอกสาร Hashing Requirements สำหรับ Customer List API (สำหรับทีม Developer ที่ส่งข้อมูลผ่าน API)
 - ทบทวน Part 013-015 (Pixel/CAPI/Events Manager) เพื่อให้แน่ใจว่า Event ที่ใช้สร้าง Custom Audience ถูกต้องแม่นยำ
 - ทบทวน Part 007 (PDPA) ก่อนอัปโหลดข้อมูลลูกค้าทุกครั้ง เพื่อความถูกต้องตามกฎหมาย
+- ทบทวน Part 011 (Business Manager) สำหรับขั้นตอนเชื่อม IG Business Account และ App เข้า Business Manager ก่อนใช้ Engagement/App Activity Custom Audience
+- ทบทวน Part 046 (Core Audience) เพื่อเข้าใจว่า Custom Audience และ Core Audience ทำงานเสริมกันอย่างไรในโครงสร้าง Audience Controls เดียวกัน
+- Meta Business Help Center: "Best Practices for Improving Customer List Match Rate" สำหรับทีมที่ต้องการเพิ่ม Match Rate อย่างจริงจังในระดับ Enterprise
+- Meta Business Help Center: "About Audience Combinations" สำหรับรายละเอียดเพิ่มเติมเรื่อง Logic AND/OR/NOT ในการรวม Custom Audience
