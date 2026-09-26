@@ -441,6 +441,12 @@ A: ASC เป็นรูปแบบแคมเปญที่ Meta ให้ 
 **Q: ควรตั้ง Ad Set กี่ตัวต่อ Campaign สำหรับ Sales Campaign?**
 A: ในช่วงทดสอบเริ่มต้น แนะนำ 1-3 Ad Set ต่อ Campaign เพื่อไม่ให้งบกระจายจนแต่ละ Ad Set ได้ Event ไม่ถึงเกณฑ์ 50 ครั้ง/สัปดาห์ เมื่อมีข้อมูลมากพอและเปิด Advantage campaign budget แล้ว สามารถเพิ่ม Ad Set ได้มากขึ้นเพราะระบบจะจัดสรรงบให้ Ad Set ที่ดีที่สุดโดยอัตโนมัติ ทบทวนหลักการจำนวน Ad Set ที่เหมาะสมได้ใน Part 016 Step 156
 
+**Q: ถ้าธุรกิจขายทั้งสินค้าและบริการที่ Sales Cycle ต่างกันมาก ควรแยก Objective ไปเลยหรือไม่?**
+A: ควรแยก โดยใช้ Sales Objective สำหรับสินค้าที่ซื้อได้ทันทีผ่านเว็บไซต์ (Impulse/Low-consideration Purchase) และใช้ Leads หรือ Messages Objective สำหรับบริการที่ต้องพูดคุย/ประเมินราคาก่อน (High-consideration) การพยายามใช้ Objective เดียวครอบทุกอย่างมักทำให้ AI สับสนเรื่องสัญญาณ เพราะพฤติกรรมของลูกค้าสองกลุ่มนี้ต่างกันโดยพื้นฐาน
+
+**Q: มี Purchase Event เกิดขึ้นจริง แต่ Ads Manager แสดงตัวเลขน้อยกว่าที่ควรจะเป็น ควรตรวจสอบอะไร?**
+A: ตรวจสอบ 3 จุดตามลำดับ: (1) Attribution Window ที่ตั้งไว้ใน Ad Set (ค่าเริ่มต้นมักเป็น 7-day click, 1-day view) อาจไม่ครอบคลุมพฤติกรรมลูกค้าจริงถ้า Sales Cycle ยาวกว่านั้น (2) Event Match Quality ใน Events Manager ต่ำเกินไป ทำให้ Meta จับคู่ Event กับคนที่เห็นโฆษณาไม่ได้ครบ ควรปรับปรุงข้อมูลที่ส่งไปกับ Conversions API (3) มีการยิง Purchase Event ซ้ำ (Duplicate) หรือขาดหาย (Missing) เนื่องจากตั้งค่า Deduplication ระหว่าง Pixel และ CAPI ไม่ถูกต้อง ทบทวนได้ใน Part 015 Step 147
+
 ---
 
 ## Case Study เสริม: ธุรกิจอาหารเสริมใช้ Value Optimization แล้วเพิ่ม Revenue โดยไม่เพิ่มงบ

@@ -49,6 +49,7 @@ Page/Post Engagement Objective คือ Objective ที่ Optimize เพื�
 3. **สร้าง Community Engagement รอบ Brand** — ธุรกิจที่ต้องการให้ Page มีความเคลื่อนไหว มีคนพูดถึง เพื่อสร้างภาพลักษณ์ Brand ที่มีชีวิตชีวา
 4. **โปรโมต Content ที่มีมูลค่าในตัวเอง** — เช่น บทความให้ความรู้, Infographic ที่อยากให้แชร์ต่อ (ธุรกิจที่เน้น Content Marketing)
 5. **เก็บ Comment เพื่อใช้เป็น Data สำหรับ Comment-to-Message Automation** — บางธุรกิจใช้ Comment เป็นจุดเริ่มของ Chatbot Funnel (จะเรียนใน Part 053)
+6. **ทดสอบตลาดใหม่ด้วยงบต่ำก่อนขยาย** — เมื่อธุรกิจต้องการรุกเข้าตลาด/กลุ่มเป้าหมายใหม่ที่ยังไม่มีข้อมูลว่าจะตอบรับหรือไม่ การรัน Engagement Campaign งบน้อยเพื่อดู "อุณหภูมิ" ความสนใจก่อน ปลอดภัยกว่าการทุ่มงบ Conversion Campaign เข้าไปเลยทั้งที่ยังไม่รู้ว่าตลาดนั้นสนใจ Concept ของแบรนด์หรือไม่
 
 ### สิ่งที่ Engagement Objective ไม่เหมาะกับ
 
