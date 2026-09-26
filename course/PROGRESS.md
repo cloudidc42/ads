@@ -10,7 +10,7 @@
 |---|---|---|
 | 001 | โลกของ Digital Advertising และโอกาสทางธุรกิจ | 🟢 `part-001-digital-advertising-opportunity.md` |
 | 002 | Mindset นักยิงแอดมืออาชีพ | 🟢 `part-002-professional-mindset.md` |
-| 003 | เข้าใจ Business Model และ Offer ก่อนยิงแอด | 🟡 |
+| 003 | เข้าใจ Business Model และ Offer ก่อนยิงแอด | 🟢 `part-003-business-model-and-offer.md` |
 | 004 | การตั้งเป้าหมายและ KPI ของแคมเปญโฆษณา | 🟢 `part-004-goals-and-kpi.md` |
 | 005 | พื้นฐานการตลาดที่ต้องรู้ก่อนยิงแอด | 🟢 `part-005-marketing-fundamentals.md` |
 | 006 | เครื่องมือและอุปกรณ์ที่ต้องเตรียม | 🟢 `part-006-tools-and-equipment.md` |

@@ -390,7 +390,9 @@ Ad Relevance Diagnostics **ไม่ใช่** Relevance Score แบบเด�
 
 ---
 
-## Step 90: Workshop — สำรวจ Meta Ads Ecosystem ด้วยตัวเอง
+## Workshop / แบบฝึกหัด
+
+### Step 90: สำรวจ Meta Ads Ecosystem ด้วยตัวเอง
 
 เป้าหมายของ Workshop นี้คือให้คุณ "เห็นของจริง" ในทุกเรื่องที่เรียนมา ไม่ใช่แค่อ่านทฤษฎี
 
