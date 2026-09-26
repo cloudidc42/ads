@@ -73,16 +73,16 @@
 
 | Part | ชื่อ | สถานะ |
 |---|---|---|
-| 046 | Core Audience — Demographics, Interests, Behaviors | 🔴 |
-| 047 | Custom Audience จากทุกแหล่งข้อมูล | 🔴 |
-| 048 | Lookalike Audience แบบเจาะลึก | 🔴 |
-| 049 | Retargeting Funnel แบบมืออาชีพ | 🔴 |
-| 050 | Full-Funnel Strategy (TOF-MOF-BOF) | 🔴 |
-| 051 | Customer Value Journey และ Ladder of Value | 🔴 |
-| 052 | Email/SMS + Facebook Ads Integration | 🔴 |
-| 053 | Messenger Marketing และ Chatbot Funnel | 🔴 |
-| 054 | Landing Page Optimization สำหรับแอด Facebook | 🔴 |
-| 055 | CRO (Conversion Rate Optimization) เจาะลึก | 🔴 |
+| 046 | Core Audience — Demographics, Interests, Behaviors | 🟢 `part-046-core-audience-targeting.md` |
+| 047 | Custom Audience จากทุกแหล่งข้อมูล | 🟢 `part-047-custom-audience-all-sources.md` |
+| 048 | Lookalike Audience แบบเจาะลึก | 🟢 `part-048-lookalike-audience-deep-dive.md` |
+| 049 | Retargeting Funnel แบบมืออาชีพ | 🟢 `part-049-retargeting-funnel-mastery.md` |
+| 050 | Full-Funnel Strategy (TOF-MOF-BOF) | 🟢 `part-050-full-funnel-strategy-tof-mof-bof.md` |
+| 051 | Customer Value Journey และ Ladder of Value | 🟢 `part-051-customer-value-journey-ladder.md` |
+| 052 | Email/SMS + Facebook Ads Integration | 🟢 `part-052-email-sms-facebook-integration.md` |
+| 053 | Messenger Marketing และ Chatbot Funnel | 🟢 `part-053-messenger-marketing-chatbot-funnel.md` |
+| 054 | Landing Page Optimization สำหรับแอด Facebook | 🟢 `part-054-landing-page-optimization.md` |
+| 055 | CRO (Conversion Rate Optimization) เจาะลึก | 🟢 `part-055-cro-conversion-rate-optimization.md` |
 
 ## Section F — Facebook Optimization, Scaling & Budget (Part 056–063)
 
