@@ -30,4 +30,5 @@
 
 ## สถานะความคืบหน้า
 
-ดูสถานะล่าสุดที่ [`course/PROGRESS.md`](./course/PROGRESS.md)
+**✅ หลักสูตรเสร็จสมบูรณ์ครบ 100 Part / 1000 Steps แล้ว** (รวมเนื้อหากว่า 60,000 บรรทัด)
+ดูรายละเอียดที่ [`course/PROGRESS.md`](./course/PROGRESS.md)
