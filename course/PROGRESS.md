@@ -40,7 +40,7 @@
 |---|---|---|
 | 021 | สร้างแคมเปญแรกแบบ Step-by-Step (Awareness) | 🟢 `part-021-first-campaign-awareness.md` |
 | 022 | สร้างแคมเปญ Traffic แบบละเอียด | 🟢 `part-022-traffic-campaign-deep-dive.md` |
-| 023 | สร้างแคมเปญ Engagement และ Video Views | 🟡 |
+| 023 | สร้างแคมเปญ Engagement และ Video Views | 🟢 `part-023-engagement-video-views.md` |
 | 024 | สร้างแคมเปญ Lead Generation (Instant Form) | 🟢 `part-024-lead-generation-instant-form.md` |
 | 025 | สร้างแคมเปญ Messages (Messenger/WhatsApp/IG) | 🟢 `part-025-messages-campaigns.md` |
 | 026 | สร้างแคมเปญ Conversions (Purchase, Add to Cart) | 🟡 |
