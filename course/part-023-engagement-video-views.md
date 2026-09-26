@@ -51,6 +51,16 @@ Page/Post Engagement Objective คือ Objective ที่ Optimize เพื�
 5. **เก็บ Comment เพื่อใช้เป็น Data สำหรับ Comment-to-Message Automation** — บางธุรกิจใช้ Comment เป็นจุดเริ่มของ Chatbot Funnel (จะเรียนใน Part 053)
 6. **ทดสอบตลาดใหม่ด้วยงบต่ำก่อนขยาย** — เมื่อธุรกิจต้องการรุกเข้าตลาด/กลุ่มเป้าหมายใหม่ที่ยังไม่มีข้อมูลว่าจะตอบรับหรือไม่ การรัน Engagement Campaign งบน้อยเพื่อดู "อุณหภูมิ" ความสนใจก่อน ปลอดภัยกว่าการทุ่มงบ Conversion Campaign เข้าไปเลยทั้งที่ยังไม่รู้ว่าตลาดนั้นสนใจ Concept ของแบรนด์หรือไม่
 
+### เจาะลึกเพิ่ม: การตั้งค่า Ad Set สำหรับ Engagement Campaign แบบละเอียด
+
+โครงสร้างการตั้งค่า Ad Set สำหรับ Engagement Campaign เหมือนกับที่เรียนใน Part 021 (Location, Age, Gender, Detailed Targeting, Placement, Budget) แต่มีข้อแนะนำเฉพาะทาง:
+
+- **Audience:** แนะนำเลือกกว้างกว่า Conversion Campaign เล็กน้อย เพราะ Engagement Campaign ทำหน้าที่ "สำรวจ" ว่าใครสนใจ Concept นี้บ้าง การเปิดกว้างเกินไปในขั้นแรกช่วยให้ระบบมีโอกาสค้นพบกลุ่มที่ Perform ดีที่ไม่คาดคิดมาก่อน
+- **Budget:** ไม่ต้องสูงเท่า Conversion Campaign เพราะต้นทุนต่อผลลัพธ์ (CPE/CPV) ต่ำกว่ามาก งบ 100-200 บาท/วันก็เพียงพอสำหรับการเริ่มสร้าง Audience Pool
+- **Duration:** แนะนำรันต่อเนื่องอย่างน้อย 7-14 วันเพื่อให้ Custom Audience มีขนาดใหญ่พอสำหรับ Retargeting ในขั้นต่อไป
+- **Placement:** เตรียม Media หลาย Ratio ให้ครบ (1:1, 4:5, 9:16) เพื่อให้ Advantage+ Placements กระจายงบไปยัง Reels/Stories ได้อย่างมีประสิทธิภาพ ตามที่เรียนหลักการเดียวกันใน Part 021 Step 206
+- **Schedule:** ถ้าธุรกิจมีช่วงเวลาที่กลุ่มเป้าหมาย Active ชัดเจน (เช่น ช่วงเย็นหลังเลิกงาน) การใช้ Lifetime Budget พร้อม Ad Scheduling ช่วยให้งบไม่กระจายไปในช่วงที่คนไม่ค่อยดูวิดีโอ ทำให้ Cost per ThruPlay ต่ำลงได้อีก
+
 ### สิ่งที่ Engagement Objective ไม่เหมาะกับ
 
 - ธุรกิจที่ต้องการยอดขายเร่งด่วน (ควรใช้ Sales Objective)
@@ -66,6 +76,18 @@ Page/Post Engagement Objective คือ Objective ที่ Optimize เพื�
 ### เจาะลึกเพิ่ม: ทำไม Meta ลดความสำคัญของ "Page Likes" ในหลายปีที่ผ่านมา
 
 ถ้าคุณเคยยิงแอดมาตั้งแต่ปี 2015-2018 อาจจำได้ว่า "Page Like Campaign" เคยเป็นแคมเปญที่นิยมมากที่สุด ธุรกิจจำนวนมากเทงบไปกับการซื้อ Follower เพจ แต่ Meta พบว่าจำนวน Follower ไม่ได้สัมพันธ์กับผลลัพธ์ทางธุรกิจของผู้ลงโฆษณาอย่างมีนัยสำคัญ (Follower เยอะไม่ได้แปลว่าเห็นโพสต์ Organic มากขึ้น เพราะ Reach ของโพสต์ Organic ถูกจำกัดโดย Algorithm อยู่แล้ว) จึงค่อยๆ ลดความสำคัญของ Feature นี้ใน UI และผลักดันให้ธุรกิจโฟกัสที่ Objective ที่เชื่อมโยงกับ Business Outcome ชัดเจนกว่าแทน — เป็นบทเรียนสำคัญว่า Metric ที่ Platform เคยส่งเสริมในอดีต ไม่ได้แปลว่ามีมูลค่าทางธุรกิจเสมอไป
+
+### เจาะลึกเพิ่ม: Naming Convention เฉพาะสำหรับ Engagement/Video Views Campaign
+
+ต่อยอดจากสูตร Naming Convention ที่เรียนใน Part 021 Step 203 แนะนำเพิ่ม Tag บอกจุดประสงค์ของ Engagement Campaign นี้ด้วย เพื่อให้แยกออกจาก Engagement Campaign อื่นที่มีจุดประสงค์ต่างกัน:
+
+```
+250926_VDV_SocialProof_LuminaSerum_V1     (ทำเพื่อสร้าง Social Proof)
+250926_VDV_RetargetPool_LuminaSerum_V1    (ทำเพื่อสร้าง Audience สำหรับ Retargeting)
+250926_ENG_MarketTest_สินค้าใหม่B_V1        (ทำเพื่อทดสอบตลาด)
+```
+
+การติด Tag แบบนี้ช่วยให้เมื่อกลับมาดูแคมเปญเก่าอีก 2-3 เดือนข้างหน้า จะรู้ทันทีว่าแคมเปญนั้นทำขึ้นเพื่อจุดประสงค์อะไร ไม่ต้องเดาหรือเปิดเข้าไปดูรายละเอียดทุกครั้ง และเมื่อใช้ Dynamic Parameter ของ UTM ตามที่เรียนใน Part 022 Step 214 ค่า Tag เหล่านี้จะติดไปกับข้อมูลใน GA4 ด้วยโดยอัตโนมัติ ทำให้การวิเคราะห์ข้ามระบบสอดคล้องกันตลอดทั้ง Funnel
 
 ### เจาะลึกเพิ่ม: ตัวเลือก Conversion Location ใน Engagement Objective เวอร์ชันใหม่
 
