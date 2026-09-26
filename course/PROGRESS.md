@@ -92,10 +92,10 @@
 | 057 | CPM, CPC, CTR, ROAS — วิเคราะห์และแก้ปัญหา | 🔴 |
 | 058 | Scaling Strategy — Vertical vs Horizontal | 🔴 |
 | 059 | Budget Optimization (CBO/ABO) และ Bid Cap | 🔴 |
-| 060 | แก้ปัญหา Ad Fatigue และ Frequency สูง | 🔴 |
-| 061 | Troubleshooting แคมเปญที่ไม่วิ่ง/CPA สูง | 🔴 |
-| 062 | Seasonal Campaigns และ Promotion Calendar | 🔴 |
-| 063 | Automated Rules และ Facebook Ads Automation | 🔴 |
+| 060 | แก้ปัญหา Ad Fatigue และ Frequency สูง | 🟢 `part-060-ad-fatigue-frequency.md` |
+| 061 | Troubleshooting แคมเปญที่ไม่วิ่ง/CPA สูง | 🟢 `part-061-troubleshooting-campaigns.md` |
+| 062 | Seasonal Campaigns และ Promotion Calendar | 🟢 `part-062-seasonal-campaigns-promotion-calendar.md` |
+| 063 | Automated Rules และ Facebook Ads Automation | 🟢 `part-063-automated-rules-automation.md` |
 
 ## Section G — TikTok Ads Fundamentals (Part 064–072)
 
