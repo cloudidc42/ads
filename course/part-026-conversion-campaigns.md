@@ -520,7 +520,15 @@ A: ตรวจสอบ 3 จุดตามลำดับ: (1) Attribution Wi
 - [ ] ไม่แก้ไขแคมเปญที่ยังอยู่ใน Learning Phase โดยไม่จำเป็น
 - [ ] ให้เวลาแคมเปญสะสมข้อมูลอย่างน้อย 3-7 วันก่อนตัดสินใจใหญ่ (ยกเว้นขาดทุนรุนแรงชัดเจน)
 - [ ] เพิ่มคอลัมน์ Add to Cart, Cost per Add to Cart, Purchase ROAS, Purchase Conversion Value ใน Ads Manager แล้ว
+- [ ] ตรวจสอบ Event Match Quality ใน Events Manager อยู่ในระดับที่ยอมรับได้ (Good หรือสูงกว่า)
 - [ ] มีแผนวินิจฉัยปัญหาตามลำดับขั้น (Delivery Status → Learning Limited → ฟันเนล → Seasonality) พร้อมใช้เมื่อผลลัพธ์ไม่ตรงเป้า
+- [ ] กรอกเทมเพลตคำนวณ Break-even ROAS และงบต่อวันครบทั้ง 9 บรรทัดแล้วก่อนเปิดงบจริง
+- [ ] เข้าใจความแตกต่างระหว่าง Manual Sales Campaign กับ Advantage+ Shopping Campaign และรู้ว่าควรใช้แบบไหนในสถานการณ์ปัจจุบัน
+- [ ] มีแผนแยกแคมเปญตามช่วงราคาสินค้าถ้าธุรกิจมีสินค้าราคาต่างกันมาก
+- [ ] ทีมงาน/เจ้าของธุรกิจเข้าใจตรงกันแล้วว่า ROAS ที่เป็นบวกไม่ได้แปลว่ากำไรเสมอไป ต้องเทียบกับ Break-even ROAS ก่อนทุกครั้ง
+- [ ] มีกำหนดเวลาทบทวนแคมเปญรอบถัดไปชัดเจน (เช่น ทุก 7 วัน) ไม่ปล่อยให้แคมเปญวิ่งเปล่าโดยไม่มีการตรวจสอบ
+- [ ] เก็บบันทึกตัวเลขผลลัพธ์รายสัปดาห์ไว้เป็นข้อมูลอ้างอิงสำหรับการปรับปรุงแคมเปญในรอบต่อไป
+- [ ] แจ้งให้ทีมงานที่เกี่ยวข้องทุกคนเข้าใจ Naming Convention และโครงสร้างแคมเปญเดียวกัน เพื่อไม่ให้เกิดความสับสนเมื่อมีคนหลายคนดูแลบัญชีเดียวกัน
 
 ---
 
@@ -580,6 +588,8 @@ Sales Objective คือจุดสุดยอดของสิ่งที�
 - Meta Business Help Center: "Diagnose and fix issues with your Pixel or Conversions API events"
 - Meta Business Help Center: "About value optimization"
 - Meta for Business: "Retail and e-commerce advertising guide"
+- Meta Business Help Center: "About the Facebook Pixel and event deduplication"
+- Meta Business Help Center: "Set up Conversions API for messaging"
 
 ### บันทึกเพิ่มเติมสำหรับผู้เรียน
 

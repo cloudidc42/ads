@@ -235,6 +235,19 @@ ASC ทำแบบเดียวกันกับ Combination ของ Audie
 - ใช้ **Radius Targeting** รอบพิกัดร้าน/สาขา ตั้งรัศมีให้ตรงกับพื้นที่บริการจริง ไม่ใช่ตั้งกว้างเผื่อไว้ "เอาเข้าจริงบางทีก็มีลูกค้าไกลๆ มาซื้อ" เพราะจะทำให้เสียงบไปกับ Impression ที่ไม่มีทางแปลงเป็นยอดขายได้
 - สำหรับธุรกิจที่มีหลายสาขา ให้พิจารณาแยกเป็นหลาย ASC ตามกลุ่มสาขา (เช่น กลุ่มกรุงเทพฯ, กลุ่มภาคเหนือ) มากกว่าทำ ASC เดียวครอบคลุมทั้งประเทศ เพราะพฤติกรรมผู้บริโภคและการแข่งขันในแต่ละภูมิภาคต่างกัน การแยกจะช่วยให้ระบบเรียนรู้ Pattern ของแต่ละภูมิภาคได้ชัดเจนกว่า
 
+### ตารางสรุปฟีเจอร์ Advantage+ ที่เกี่ยวข้องกันแต่ไม่เหมือนกัน (ป้องกันความสับสน)
+
+| ชื่อฟีเจอร์ | ใช้กับ Objective | ควบคุมมิติไหน |
+|---|---|---|
+| Advantage+ Shopping Campaign (ASC) | Sales (E-commerce) | ทั้งแคมเปญ: Audience, Placement, Creative |
+| Advantage+ App Campaign | App Promotion | ทั้งแคมเปญสำหรับแอป (Part 028 Step 277) |
+| Advantage+ Creative | ทุก Objective | เฉพาะการปรับแต่งครีเอทีฟ (Crop, Caption, Enhancement) |
+| Advantage+ Placements | ทุก Objective | เฉพาะการเลือก Placement อัตโนมัติ |
+| Advantage Detailed Targeting | ทุก Objective | เฉพาะการขยาย Interest/Behavior ที่เลือกไว้ |
+| Advantage+ Audience | หลาย Objective (รวมที่ไม่ใช่ Sales) | การหา Audience อัตโนมัติในระดับ Ad Set (จะเจาะลึกใน Part 030) |
+
+การแยกความแตกต่างของฟีเจอร์เหล่านี้สำคัญมาก เพราะชื่อที่คล้ายกัน ("Advantage+" ขึ้นต้นเหมือนกันหมด) ทำให้นักยิงแอดจำนวนมากสับสนว่าเปิดฟีเจอร์ไหนอยู่บ้าง ควรเปิด Ads Manager เช็คทุกครั้งว่า Toggle ไหนเปิด/ปิดอยู่จริงในแคมเปญที่ดูแล ไม่ใช่จำจากความเข้าใจเดิมเพียงอย่างเดียว
+
 ---
 
 ## Step 286: เชื่อม Catalog กับ ASC สำหรับ E-commerce
@@ -483,6 +496,12 @@ A: ไม่ควร ควรทดสอบทีละกลุ่มสิ�
 **Q: ASC วัด Learning Phase เสร็จเมื่อไหร่ ดูจากตรงไหน?**
 A: ดูที่คอลัมน์ "Delivery" ในตาราง Ads Manager ระดับ Campaign หรือ Ad — ถ้าแสดงคำว่า "Active" แสดงว่าผ่าน Learning Phase แล้ว ถ้ายังแสดง "Learning" หมายถึงยังอยู่ในช่วง Explore Combination ควรรอต่อและไม่แก้ไขแคมเปญในช่วงนี้
 
+**Q: ถ้า ASC และ Manual Campaign ใช้ Catalog เดียวกัน จะมีปัญหาอะไรหรือไม่?**
+A: ใช้ Catalog เดียวกันได้ไม่มีปัญหา เพราะ Catalog เป็นแหล่งข้อมูลสินค้า ไม่ใช่ตัวกำหนด Audience โดยตรง สิ่งที่ต้องระวังคือ Audience ที่ทั้งสองแคมเปญเข้าถึง (ตามที่อธิบายเรื่อง Exclude Existing Customer) มากกว่าเรื่อง Catalog ที่ใช้ร่วมกัน
+
+**Q: เอเจนซี่ควรสื่อสารเรื่อง ASC กับลูกค้าที่ไม่มีพื้นฐานเทคนิคอย่างไร?**
+A: หลีกเลี่ยงศัพท์เทคนิคอย่าง Combinatorial Exploration หรือ Bandit Algorithm ใช้การเปรียบเทียบง่ายๆ เช่น "ให้ระบบ AI ของ Facebook ช่วยทดลองหาสูตรที่ดีที่สุดให้เราแทนที่จะลองผิดลองถูกเอง" และเน้นย้ำว่าต้องให้เวลาระบบเรียนรู้ก่อนตัดสินใจ เพื่อป้องกันไม่ให้ลูกค้ากดดันให้ปิดแคมเปญเร็วเกินไปในช่วง Learning Phase
+
 ---
 
 ## Checklist ท้ายบท
@@ -537,6 +556,17 @@ Part นี้ปิดท้าย Trilogy ของ Automation ใน Meta Ads
 
 Part ถัดไปคือ **Part 030: Advantage+ Audience และ AI-Powered Targeting** ซึ่งจะขยายความเรื่อง Automation ด้าน Targeting ให้ลึกขึ้นไปอีก ครอบคลุมทั้งแคมเปญที่ไม่ใช่ E-commerce ด้วย (ไม่จำกัดแค่ Sales Objective เหมือน ASC) เป็นการปิดภาพรวมของทิศทาง AI-Powered Advertising ที่ Meta กำลังผลักดันทั้งระบบก่อนจะเข้าสู่หัวข้อการยิงแอดเฉพาะอุตสาหกรรมใน Part 031 เป็นต้นไป
 
+### สิ่งที่ควรทำต่อทันทีหลังเรียน Part นี้จบ
+
+ก่อนไปต่อ Part 030 แนะนำให้คุณกลับไปสำรวจ Ad Account ที่คุณดูแลอยู่ (ของตัวเองหรือของลูกค้า) แล้วตอบคำถามเหล่านี้ให้ได้ก่อน:
+
+- ธุรกิจนี้มี Catalog และ Purchase Volume พร้อมสำหรับ ASC หรือยัง ตามเช็คลิสต์ใน Step 282
+- ถ้ายังไม่เคยลอง ASC เลย ควรเริ่มทดสอบเมื่อไหร่ และด้วยงบเท่าไหร่
+- ถ้าเคยลองแล้วแต่เลิกเร็วเกินไป ควรกลับไปลองใหม่โดยให้เวลา Learning Phase มากกว่าเดิมหรือไม่
+- มี Manual Retargeting Funnel ที่แข็งแรงพอจะทำงานคู่กับ ASC หรือยัง (ทบทวน Part 027 ถ้ายังไม่มี)
+
+การตอบคำถามเหล่านี้อย่างตรงไปตรงมาจะช่วยให้คุณนำความรู้จาก Part นี้ไปใช้ได้จริงทันที ไม่ใช่แค่เก็บไว้เป็นความรู้ทางทฤษฎี
+
 ---
 
 ## อ้างอิง/แหล่งข้อมูลเพิ่มเติม
@@ -546,4 +576,12 @@ Part ถัดไปคือ **Part 030: Advantage+ Audience และ AI-Power
 - Meta for Business: Advantage+ Creative และ Creative Enhancements
 - Meta Business Help Center: Special Ad Category และผลต่อ Advantage+ Campaigns
 - Meta Business Help Center: Incrementality Testing และ Conversion Lift Study
+- Meta Business Help Center: Commerce Manager — Catalog Creative Studio และ Dynamic Templates
+- Meta for Business: Machine Learning และ Delivery Optimization ภาพรวมเชิงเทคนิค
+- Meta Business Help Center: Reach & Frequency Report สำหรับวิเคราะห์ Incremental Reach
 - เอกสารประกอบภายในทีม: Template Controlled Test สำหรับเปรียบเทียบ Manual vs Automated Campaign
+- เอกสารประกอบภายในทีม: SOP การตัดสินใจ Scale งบ ASC ตามเกณฑ์ Learning Phase และ Marginal CPA
+
+### หมายเหตุปิดท้าย
+
+ฟีเจอร์ Automation ของ Meta อย่าง ASC มีการอัปเดตความสามารถอยู่เสมอ (เช่น การเพิ่มตัวเลือกควบคุมใหม่ๆ หรือเปลี่ยนชื่อฟีเจอร์) นักยิงแอดมืออาชีพควรติดตาม Meta Business Help Center และ Meta for Business Newsroom อย่างสม่ำเสมอ เพื่อให้ความรู้ที่ใช้ในการทำงานทันกับความเปลี่ยนแปลงของแพลตฟอร์มเสมอ ไม่ใช่ยึดติดกับสิ่งที่เรียนมาครั้งเดียวแล้วไม่ปรับตัวตาม
