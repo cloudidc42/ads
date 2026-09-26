@@ -598,3 +598,6 @@ Part นี้พาคุณเจาะลึกโลกของ App Promoti
 - Meta Business Help Center: Deep Linking และ App Links Best Practices
 - Meta Business Help Center: Audience Network Placement Guidelines สำหรับ App Ads
 - Meta Business Help Center: Creative Best Practices for Gaming and Utility Apps
+- Meta for Developers: Conversion Value Rules Configuration Guide สำหรับ SKAdNetwork
+- Google Play Console: Best Practices for Store Listing และผลต่อ Install Conversion Rate
+- Apple App Store Connect: App Analytics และการอ่านข้อมูล Retention เทียบกับ Meta Ads Manager
