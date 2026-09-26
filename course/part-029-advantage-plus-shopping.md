@@ -31,7 +31,7 @@ Part นี้ต่อจาก Part 027 (Catalog Sales/Dynamic Ads) และ 
 
 **Advantage+ Shopping Campaigns** คือรูปแบบแคมเปญที่ Meta เปิดตัวเพื่อรวมเอาฟีเจอร์ Automation ทั้งหมดที่มีมา (Advantage Detailed Targeting, Advantage+ Placements, Advantage+ Creative, Dynamic Ads) มาไว้ในแคมเปญเดียวที่ถูกออกแบบมาให้ AI ควบคุมการตัดสินใจส่วนใหญ่โดยอัตโนมัติ เป้าหมายของ Meta คือให้ผู้ลงโฆษณา E-commerce ใช้เวลาน้อยลงในการตั้งค่า Manual แต่ได้ผลลัพธ์ที่ดีขึ้นจากการที่ Machine Learning มีอิสระในการทดสอบ Combination มากขึ้น
 
-ก่อนหน้านี้ Meta เคยเรียกฟีเจอร์นี้ในชื่อ "Performance Max" ตามแนวทางที่คล้ายกับ Google — แต่สำหรับ Meta Ads ชื่อที่ใช้และคงที่มาจนถึงปัจจุบันคือ Advantage+ Shopping Campaigns หรือเรียกย่อว่า **ASC**
+แนวคิดของ ASC คล้ายกับสิ่งที่ Google Ads เรียกว่า "Performance Max" (แคมเปญอัตโนมัติที่ให้ AI ตัดสินใจ Audience/Placement/Creative แทนผู้ลงโฆษณา) แต่เป็นชื่อและผลิตภัณฑ์คนละแพลตฟอร์มกัน — "Performance Max" เป็นชื่อเฉพาะของ Google เท่านั้น Meta ไม่ได้เคยใช้ชื่อนี้ ชื่อที่ Meta ใช้และคงที่มาจนถึงปัจจุบันคือ Advantage+ Shopping Campaigns หรือเรียกย่อว่า **ASC**
 
 ### ความแตกต่างเชิงโครงสร้างจาก Manual Campaign
 
