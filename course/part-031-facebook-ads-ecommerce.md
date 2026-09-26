@@ -1,0 +1,465 @@
+# Part 031: Facebook Ads สำหรับ E-commerce (Shopee/Lazada/Website)
+
+**Section:** C — Facebook Ads Manager Deep Dive: Setup & Structure
+**Step ที่ครอบคลุม:** 301–310 (จากทั้งหมด 1000 Steps)
+**เวลาศึกษาโดยประมาณ:** 6–8 ชั่วโมง (รวมอ่านเนื้อหา + ลงมือทำ Workshop วางแผน Full-Funnel จริง)
+**ระดับ:** กลาง–สูง (ต้องมีพื้นฐาน Pixel/CAPI จาก Part 013–015, Catalog/Dynamic Ads จาก Part 027, และ Advantage+ Audience จาก Part 030 มาก่อน)
+
+---
+
+ธุรกิจอีคอมเมิร์ซคือกลุ่มลูกค้าที่ใช้ Facebook Ads หนาแน่นที่สุดในไทย แต่ก็เป็นกลุ่มที่มีความซับซ้อนเฉพาะทางมากที่สุดด้วย เพราะร้านค้าไทยส่วนใหญ่ไม่ได้ขายบนเว็บไซต์ของตัวเองอย่างเดียว แต่กระจายอยู่บน Shopee, Lazada, TikTok Shop และเว็บไซต์ตัวเองพร้อมกัน ทำให้การ Track ผลลัพธ์ การวาง Funnel และการคำนวณ ROAS ซับซ้อนกว่าธุรกิจทั่วไปมาก
+
+Part นี้จะพาไปเจาะลึกทุกมิติของการยิงแอด Facebook สำหรับอีคอมเมิร์ซ ตั้งแต่ความแตกต่างของการยิงเข้าเว็บไซต์ตัวเองกับ Marketplace ข้อจำกัดเรื่อง Tracking ที่มาพร้อมกับ Marketplace และวิธีแก้ไขที่ใช้ได้จริง ไปจนถึงการออกแบบ Full-Funnel Campaign ที่ผสาน Prospecting, Retargeting และ Loyalty เข้าด้วยกันอย่างเป็นระบบ รวมถึงกลยุทธ์เฉพาะสำหรับแคมเปญเทศกาลใหญ่อย่าง 9.9, 11.11 และ 12.12 ที่ร้านค้าไทยพลาดไม่ได้
+
+## Steps ที่ครอบคลุมใน Part นี้
+
+1. **Step 301** — E-commerce Funnel บน Facebook เจาะลึก: TOF/MOF/BOF เฉพาะทางสำหรับสินค้าที่ซื้อได้ทันที
+2. **Step 302** — ยิงตรงเว็บไซต์ (Own Checkout) vs ยิงเข้า Storefront Shopee/Lazada: ข้อดี-ข้อเสียของแต่ละทาง
+3. **Step 303** — ข้อจำกัดการ Tracking เมื่อยิงเข้า Marketplace (ไม่มี Pixel) และวิธีแก้ไขที่ใช้ได้จริง
+4. **Step 304** — Catalog-based Retargeting สำหรับผู้ทิ้งตะกร้า (Dynamic Ads for Cart Abandoners) แบบเจาะลึก
+5. **Step 305** — โครงสร้างแคมเปญ Full-Funnel E-commerce: Prospecting / Retargeting / Loyalty
+6. **Step 306** — วางแผนแคมเปญเทศกาลอีคอมเมิร์ซ (9.9, 11.11, 12.12) แบบมืออาชีพ
+7. **Step 307** — กลยุทธ์ Creative Bundling/Upsell เพื่อเพิ่ม AOV (Average Order Value)
+8. **Step 308** — KPI เฉพาะทางอีคอมเมิร์ซ: AOV, Repeat Purchase Rate, ROAS by SKU
+9. **Step 309** — ข้อผิดพลาดที่พบบ่อยของธุรกิจอีคอมเมิร์ซบน Facebook Ads
+10. **Step 310** — Workshop: สร้างแผน Full-Funnel อีคอมเมิร์ซให้ร้านค้าออนไลน์ไทยแบบจับมือทำ
+
+---
+
+## Step 301: E-commerce Funnel บน Facebook เจาะลึก
+
+### ความแตกต่างของ E-commerce Funnel กับ Funnel ทั่วไป
+
+Funnel ทั่วไปที่เรียนใน Part 005 (Awareness → Consideration → Conversion → Loyalty) ยังใช้ได้กับอีคอมเมิร์ซ แต่มีลักษณะเฉพาะที่ต้องเข้าใจเพิ่ม เพราะสินค้าอีคอมเมิร์ซส่วนใหญ่มี Decision Cycle สั้นกว่าธุรกิจ High-ticket หรือ B2B มาก (นาทีถึงชั่วโมง ไม่ใช่วันถึงเดือน) และมี "จุดเสียดทาน" (Friction Point) ที่ชัดเจนตลอดกระบวนการซื้อ ได้แก่ View Content → Add to Cart → Initiate Checkout → Purchase
+
+### รายละเอียด Funnel แต่ละชั้นสำหรับอีคอมเมิร์ซ
+
+**TOF (Top of Funnel) — Cold Traffic**
+เป้าหมายคือให้คนที่ไม่รู้จักแบรนด์เห็นสินค้าครั้งแรก Objective ที่ใช้มักเป็น Sales ที่ Optimize ด้วย Advantage+ Audience แบบปล่อยกว้าง (ตามที่เรียนใน Part 030) หรือใช้ Advantage+ Shopping Campaigns (Part 029) เป็นตัวหลัก Creative ในชั้นนี้ต้องทำหน้าที่ "หยุดสกอร์" และสื่อสาร Value Proposition ให้ชัดใน 3 วินาทีแรก
+
+**MOF (Middle of Funnel) — Warm Traffic ที่ Engage แล้วแต่ยังไม่ซื้อ**
+คือกลุ่มคนที่ View Content สินค้าแล้ว หรือ Add to Cart แล้วแต่ไม่ Checkout กลุ่มนี้คือ "เงินที่รอเก็บ" ที่สำคัญที่สุดของอีคอมเมิร์ซ เพราะมี Intent สูงกว่า Cold Traffic มาก การ Retarget กลุ่มนี้ด้วย Dynamic Ads (รายละเอียดใน Step 304) ให้ CPA ต่ำกว่า Prospecting เสมอ
+
+**BOF (Bottom of Funnel) — ลูกค้าเดิมและ Checkout ค้าง**
+คือกลุ่มที่ Initiate Checkout แล้วแต่ไม่จบการซื้อ (มักเกิดจากปัญหาเรื่องค่าส่ง วิธีชำระเงิน หรือแค่เปลี่ยนใจชั่วคราว) และกลุ่มลูกค้าเดิมที่ซื้อไปแล้วและมีโอกาสซื้อซ้ำ
+
+### ตารางสรุป Funnel Stage กับ Custom Audience ที่ต้องสร้าง
+
+| Funnel Stage | Custom Audience ที่ควรสร้าง | Window ที่แนะนำ |
+|---|---|---|
+| TOF | ไม่ต้องใช้ Custom Audience (ปล่อยกว้างหรือ Lookalike จาก Purchasers) | - |
+| MOF-1 | View Content แต่ไม่ Add to Cart | 14 วัน |
+| MOF-2 | Add to Cart แต่ไม่ Initiate Checkout | 7 วัน |
+| BOF-1 | Initiate Checkout แต่ไม่ Purchase | 3-7 วัน |
+| BOF-2 (Loyalty) | Purchased แล้ว (สำหรับ Cross-sell/Upsell) | 30-180 วัน ตามรอบซื้อซ้ำของสินค้า |
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. ใช้ Funnel เดียวกันทุกสินค้าโดยไม่ปรับ Window ตามรอบการซื้อจริง (สินค้าอุปโภคบริโภคที่ซื้อซ้ำเร็วควรใช้ Window สั้นกว่าสินค้าที่ซื้อนาน ๆ ครั้ง)
+2. โฟกัสงบส่วนใหญ่ไปที่ TOF โดยไม่จัดสรรงบให้ MOF/BOF เพียงพอ ทำให้เสีย "เงินที่รอเก็บ" ไปเปล่า ๆ
+3. ไม่แยก Creative ตาม Funnel Stage — ใช้ Creative แบบ Awareness เดียวกันยิงทั้ง Cold และ Warm Traffic ทั้งที่ Warm Traffic ต้องการ Message ที่เร่งการตัดสินใจ (เช่น โปรโมชั่น, Urgency) มากกว่า
+4. ไม่ปรับ Funnel ตาม Price Point ของสินค้า — สินค้าราคาถูก (ต่ำกว่า 300 บาท) มัก Decision Cycle สั้นจนไม่จำเป็นต้องมี MOF ซับซ้อนมาก ในขณะที่สินค้าราคาสูง (มากกว่า 3,000 บาท) อาจต้องมี MOF ที่ยาวขึ้นและมี Content เพิ่มความมั่นใจ (เช่น รีวิว, Comparison) มากขึ้น
+5. ลืมว่า ViewContent Event ต้องตั้งค่าให้ยิงเฉพาะหน้าสินค้าจริง ไม่ใช่ทุกหน้าของเว็บไซต์ ถ้าตั้งผิดจะทำให้ Custom Audience ของ MOF-1 ปนคนที่ไม่ได้สนใจสินค้าจริงเข้ามาจำนวนมาก
+
+### ความสัมพันธ์ระหว่าง Funnel Stage กับ Bid Strategy
+
+แต่ละ Funnel Stage ควรพิจารณา Bid Strategy ที่ต่างกันตามระดับความมั่นใจใน Conversion เชื่อมกับ Part 018:
+
+- **TOF (Prospecting):** ใช้ Lowest Cost หรือ Cost Cap แบบหลวม เพราะยังอยู่ในช่วง Explore หา Segment ที่ดีที่สุด
+- **MOF (Retargeting เบา):** ใช้ Lowest Cost เพื่อให้ระบบหา Conversion ได้เร็วที่สุดจาก Pool ที่มี Intent สูงอยู่แล้ว
+- **BOF (Retargeting หนัก/Checkout ค้าง):** สามารถใช้ Cost Cap ที่สูงกว่าปกติได้เล็กน้อย เพราะ Pool นี้มี Conversion Rate สูงมาก การจ่ายแพงขึ้นเล็กน้อยเพื่อปิดการขายยังคุ้มค่า
+
+---
+
+## Step 302: ยิงตรงเว็บไซต์ (Own Checkout) vs ยิงเข้า Storefront Shopee/Lazada
+
+### ข้อดี-ข้อเสียของการยิงตรงเว็บไซต์ตัวเอง
+
+**ข้อดี:**
+- ควบคุม Tracking ได้เต็มรูปแบบผ่าน Pixel/CAPI ของตัวเอง (EMQ สูงกว่า)
+- เก็บข้อมูลลูกค้าเป็น First-party Data ได้ (Email, Phone) เพื่อทำ Custom Audience และ Retargeting ในอนาคต
+- กำหนด Margin ได้เอง ไม่ต้องเสีย Ad Fee ให้ Marketplace (Shopee/Lazada เก็บค่าธรรมเนียมทั้ง Commission และ Ads Fee)
+- ปรับแต่ง Checkout Experience, Upsell, Bundle ได้อย่างอิสระ
+
+**ข้อเสีย:**
+- ต้องลงทุนสร้างและดูแล Website/Landing Page ให้พร้อม (Page Speed, Checkout Flow — ดู Part 008)
+- ลูกค้าไทยจำนวนมากยังคุ้นเคยและเชื่อใจ Marketplace มากกว่าเว็บไซต์ที่ไม่รู้จัก โดยเฉพาะเรื่องการคืนเงิน/รีวิว
+- ต้องจัดการระบบชำระเงิน (Payment Gateway) และระบบขนส่งเอง
+
+### ข้อดี-ข้อเสียของการยิงเข้า Storefront Shopee/Lazada
+
+**ข้อดี:**
+- ลูกค้าไว้ใจ Marketplace อยู่แล้ว Conversion Rate มักสูงกว่าเว็บไซต์ที่ไม่มีชื่อ โดยเฉพาะลูกค้าใหม่ที่ไม่รู้จักแบรนด์
+- ไม่ต้องดูแลระบบ Checkout/Payment/Shipping เอง Marketplace จัดการให้ทั้งหมด
+- มีระบบรีวิวและ Rating ที่ช่วยสร้างความน่าเชื่อถือทันทีในหน้าสินค้า
+
+**ข้อเสีย:**
+- Tracking ไม่สมบูรณ์ ไม่มี Pixel ให้ติดตั้งบนหน้า Shopee/Lazada ทำให้วัด ROAS จริงยากกว่ามาก (รายละเอียดวิธีแก้ใน Step 303)
+- เสีย Margin สองต่อ (ค่า Commission ของ Marketplace + ค่าโฆษณาของ Facebook)
+- ไม่ได้เก็บข้อมูลลูกค้าเป็นของตัวเอง ทำให้สร้าง Retargeting/Loyalty ระยะยาวยากกว่า
+- แข่งขันด้านราคากับร้านอื่นในหน้าสินค้าเดียวกันได้ง่าย (Marketplace แสดงร้านคู่แข่งข้าง ๆ กัน)
+
+### กลยุทธ์แบบผสม (Hybrid) ที่ร้านค้าไทยส่วนใหญ่ใช้จริง
+
+ร้านค้าที่ทำอีคอมเมิร์ซแบบมืออาชีพส่วนใหญ่ไม่เลือกทางเดียว แต่ใช้กลยุทธ์แบบผสม:
+
+1. **ใช้ Facebook เพื่อสร้าง Awareness และ Traffic เข้าเว็บไซต์ตัวเองเป็นหลัก** เพื่อเก็บ First-party Data และควบคุม Margin
+2. **ใช้ Marketplace เป็นช่องทางเสริมสำหรับลูกค้าที่ไม่ไว้ใจเว็บไซต์ใหม่** โดยใส่ลิงก์ Shopee/Lazada ไว้ใน Bio/Comment สำหรับคนที่ถามหา
+3. **ใช้ Organic Content/Comment เพื่อ Cross-promote ทั้งสองช่องทาง** โดยไม่ต้องยิง Ads ตรงเข้า Marketplace เพื่อประหยัดงบ Ads Fee ซ้ำซ้อน
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. ยิง Ads ตรงเข้า Marketplace ทั้งที่มีเว็บไซต์ตัวเองที่พร้อมแล้ว ทำให้เสีย Margin ไม่จำเป็นและเสียโอกาสเก็บ First-party Data
+2. ยิง Ads เข้าเว็บไซต์ตัวเองทั้งที่เว็บไซต์ยังไม่พร้อม (โหลดช้า, Checkout ซับซ้อน) ทำให้ Conversion Rate ต่ำกว่าที่ควรจะเป็นมาก
+3. ไม่วัดผลเปรียบเทียบ ROAS ระหว่างสองช่องทางอย่างเป็นระบบ ทำให้ตัดสินใจแบ่งงบผิดพลาด
+
+---
+
+## Step 303: ข้อจำกัดการ Tracking เมื่อยิงเข้า Marketplace และวิธีแก้ไขที่ใช้ได้จริง
+
+### ทำไม Tracking บน Shopee/Lazada ถึงเป็นปัญหาใหญ่
+
+Shopee และ Lazada ไม่อนุญาตให้ผู้ขายติดตั้ง Facebook Pixel บนหน้า Storefront หรือหน้าสินค้าของตัวเองได้ เพราะเป็น Platform ปิดที่ควบคุม Data ทั้งหมดเอง นั่นแปลว่าเมื่อคนคลิกจากโฆษณา Facebook ไปที่หน้าสินค้าบน Shopee แล้วซื้อ Facebook Pixel จะ**ไม่เห็น Event Purchase นั้นเลย** ทำให้ Ads Manager แสดง ROAS ต่ำกว่าความเป็นจริงมาก (Under-reporting) และ AI ของ Meta ก็ไม่มี Signal มา Optimize การยิงแอดให้ดีขึ้นด้วย
+
+### วิธีแก้ไขที่ใช้ได้จริง — Deep Link และ Affiliate Tracking
+
+Shopee และ Lazada มีระบบ Affiliate/Open Platform ที่ผู้ขายสามารถสร้าง **Tracking Link เฉพาะ** สำหรับแคมเปญโฆษณาได้ ผ่าน Shopee Affiliate Program หรือ Lazada Affiliate/Universal Link วิธีการคือ:
+
+1. สมัคร Shopee Affiliate Program หรือ Lazada Affiliate Program ในฐานะผู้ขาย (Seller Affiliate)
+2. สร้าง Tracking Link เฉพาะสำหรับสินค้าที่จะยิงโฆษณา ลิงก์นี้จะมี Sub-ID หรือ UTM Parameter ที่ระบุว่ามาจากแคมเปญไหน
+3. ใช้ลิงก์นี้เป็น Destination URL ในโฆษณา Facebook แทนลิงก์สินค้าตรง ๆ
+4. ตรวจผลลัพธ์ผ่าน Dashboard ของ Affiliate Program (Shopee/Lazada จะรายงานว่า Order ไหนมาจาก Sub-ID/Link ไหน) แทนการดูผลจาก Ads Manager โดยตรง
+
+### วิธีแก้ไขที่ใช้ได้จริง — โค้ดโปรโมชั่นเฉพาะแคมเปญ
+
+วิธีที่ง่ายและ Media Buyer ไทยใช้กันมากคือสร้าง **โค้ดส่วนลดเฉพาะสำหรับแคมเปญโฆษณา** บน Shopee/Lazada (เช่น โค้ด "FBADS50" ให้ส่วนลด 50 บาทเฉพาะคนที่มาจากโฆษณา) แล้วนำจำนวนคนที่ใช้โค้ดนี้ (ดูได้จาก Seller Center → Marketing Centre → Voucher Performance) มาคำนวณ ROAS แบบ Manual โดยเทียบกับ Amount Spent จาก Ads Manager ข้อดีคือทำง่าย ไม่ต้องพึ่งระบบ Affiliate ที่ซับซ้อน แต่ข้อเสียคือวัดได้แค่คนที่ใช้โค้ดจริง คนที่ซื้อโดยไม่ใช้โค้ดจะไม่ถูกนับ (Under-count เช่นกันแต่น้อยกว่าไม่ทำอะไรเลย)
+
+### วิธีแก้ไขที่ใช้ได้จริง — UTM + Google Analytics 4 (GA4)
+
+แม้จะยิง Traffic ไปที่ Marketplace โดยตรงไม่ได้ 100% แต่ถ้าร้านมี Landing Page ตัวกลาง (เช่น หน้า Linktree หรือหน้า Landing Page เล็ก ๆ ที่ทำเอง) ก่อนส่งต่อไป Marketplace สามารถ:
+
+1. ยิงโฆษณาเข้า Landing Page ตัวกลางที่มี Facebook Pixel ติดตั้งอยู่ (จับ Event View Content ได้ที่นี่)
+2. ใส่ UTM Parameter บนปุ่มที่ลิงก์ไปยัง Shopee/Lazada จาก Landing Page นี้
+3. ตั้งค่า GA4 ให้ Track Event การคลิกปุ่มไปยัง Marketplace เป็น Goal/Conversion Event ใน GA4 (ดูรายละเอียดเต็มใน Part 089)
+4. ใช้ตัวเลข Click-through Rate ไปยัง Marketplace ร่วมกับอัตราการซื้อเฉลี่ยของ Marketplace (จากข้อมูลย้อนหลัง) มาประเมิน ROAS แบบ Estimate
+
+วิธีนี้ไม่สมบูรณ์แบบ 100% (ยังวัด Purchase จริงไม่ได้ตรง ๆ) แต่ช่วยให้เห็นภาพ Funnel และ Drop-off Point ได้ดีขึ้นกว่าไม่ทำอะไรเลย
+
+### ตารางสรุปวิธีแก้ปัญหา Tracking เรียงตามความแม่นยำ
+
+| วิธี | ความแม่นยำ | ความยาก | เหมาะกับ |
+|---|---|---|---|
+| Affiliate/Deep Link Tracking | สูง | ปานกลาง-ยาก | ร้านที่ขายผ่าน Marketplace เป็นหลัก |
+| โค้ดโปรโมชั่นเฉพาะแคมเปญ | ปานกลาง | ง่าย | ร้านขนาดเล็ก-กลางที่ต้องการทำเร็ว |
+| UTM + GA4 ผ่าน Landing Page ตัวกลาง | ปานกลาง (วัด Intent ไม่ใช่ Purchase ตรง) | ปานกลาง | ร้านที่มี Landing Page อยู่แล้ว |
+| ไม่ทำอะไรเลย (ดูจาก Ads Manager ตรง ๆ) | ต่ำมาก (Under-report รุนแรง) | ง่ายสุด | ไม่แนะนำ |
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. ยิง Ads เข้า Shopee/Lazada ตรง ๆ โดยไม่มีระบบ Tracking เสริมใด ๆ แล้วตัดสินใจ Pause แคมเปญเพราะเห็น ROAS ใน Ads Manager ต่ำ ทั้งที่ความจริงอาจขายดีมากแต่ Tracking ไม่เห็น
+2. สร้างโค้ดโปรโมชั่นแต่ไม่ได้สื่อสารให้ลูกค้ารู้จักโค้ดชัดเจนในโฆษณา ทำให้ Adoption Rate ของโค้ดต่ำ วัดผลไม่ได้แม่นยำ
+3. ไม่เก็บข้อมูลย้อนหลังเปรียบเทียบ Amount Spent กับ Order จริงจาก Seller Center เป็นประจำ ทำให้ไม่มี Baseline สำหรับประเมินผลในอนาคต
+
+---
+
+## Step 304: Catalog-based Retargeting สำหรับผู้ทิ้งตะกร้า
+
+### ทำไม Cart Abandonment Retargeting คือ Low-hanging Fruit ของอีคอมเมิร์ซ
+
+ข้อมูลอุตสาหกรรมทั่วโลกชี้ว่าอัตราการทิ้งตะกร้า (Cart Abandonment Rate) เฉลี่ยอยู่ที่ 60-80% ของคนที่ Add to Cart ทั้งหมด นั่นแปลว่าถ้ามีคน Add to Cart 100 คน จะมีคนทิ้งตะกร้าไป 60-80 คนโดยไม่ Checkout กลุ่มนี้คือกลุ่มที่มี Purchase Intent สูงที่สุดในบรรดา Warm Traffic ทั้งหมด เพราะพวกเขาเลือกสินค้าและใส่ตะกร้าไปแล้ว เหลือแค่ขั้นตอนสุดท้าย
+
+### การตั้งค่า Dynamic Ads for Cart Abandoners
+
+ต่อจากพื้นฐาน Catalog Sales ที่เรียนใน Part 027 ให้สร้าง Ad Set ใหม่ภายใต้ Campaign แบบ Catalog Sales โดย:
+
+1. ไปที่ Ads Manager → Create → Sales Objective → เลือก Catalog ที่เชื่อมกับ Feed สินค้าแล้ว
+2. ที่ Ad Set → Audience Controls → Audience Segment → เลือก **Retarget ads to people who interacted with your products or business** → เลือก Custom Combination: "Added to cart but not purchased" → ตั้ง Window เป็น 3-7 วัน (สินค้าทั่วไป) หรือ 1-3 วัน (สินค้าด่วน/Flash Sale)
+3. Exclude คนที่ Purchase ไปแล้วใน 1-3 วันล่าสุด เพื่อไม่ให้เห็นโฆษณาสินค้าที่ซื้อไปแล้ว
+4. ที่ Ad Level เลือก Format เป็น Carousel หรือ Collection Ad ที่ดึงสินค้าจริงที่ลูกค้าเคย Add to Cart มาแสดงอัตโนมัติ (Dynamic Creative จาก Catalog)
+
+### เทคนิคการเขียน Copy สำหรับ Cart Abandoner Ads
+
+Message สำหรับกลุ่มนี้ต้องต่างจาก Prospecting โดยสิ้นเชิง เพราะพวกเขารู้จักสินค้าแล้ว ไม่ต้องอธิบายว่าสินค้าคืออะไร ควรเน้น:
+
+- **สร้าง Urgency** เช่น "สินค้าที่คุณเลือกไว้เหลือไม่มาก" หรือ "ราคาพิเศษหมดเขตคืนนี้"
+- **แก้ Objection ที่พบบ่อย** เช่น ถ้ารู้ว่าลูกค้าทิ้งตะกร้าเพราะค่าส่ง ให้เสนอ "ส่งฟรีเมื่อกลับมาซื้อภายใน 24 ชั่วโมง"
+- **เสนอ Incentive เล็ก ๆ** เช่น ส่วนลด 5-10% เฉพาะกลุ่มนี้ (ไม่ควรเสนอส่วนลดสูงเกินไปเพราะจะทำให้ลูกค้าเรียนรู้ที่จะทิ้งตะกร้าเพื่อรอส่วนลดในทุกครั้ง)
+
+### โครงสร้าง Sequential Retargeting สำหรับ Cart Abandoner
+
+แนะนำให้แบ่งเป็น 2-3 Ad Set ตามระยะเวลาที่ทิ้งตะกร้า เพื่อปรับ Message ให้เหมาะกับความเร่งด่วนที่ต่างกัน:
+
+| Ad Set | Window | Message Focus |
+|---|---|---|
+| Cart Abandoner - Day 0-1 | 0-24 ชั่วโมง | เตือนความจำแบบนิ่ม ๆ ไม่มีส่วนลด ("ยังอยู่ในตะกร้าของคุณ") |
+| Cart Abandoner - Day 1-3 | 1-3 วัน | เริ่มแก้ Objection + Incentive เล็ก (ส่งฟรี/ส่วนลด 5%) |
+| Cart Abandoner - Day 3-7 | 3-7 วัน | Urgency สูงสุด + Incentive ที่มากขึ้นเล็กน้อย (ก่อนตัดใจปล่อย) |
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. ตั้ง Window การ Retarget นานเกินไป (เช่น 30 วัน) ทำให้ยิงโฆษณาสินค้าที่ลูกค้าอาจซื้อจากที่อื่นไปแล้วหรือหมดความสนใจไปแล้ว
+2. ใช้ Creative แบบ Static เดียวกันสำหรับ Cart Abandoner ทุกคน ไม่ใช้ Dynamic Ads ที่ดึงสินค้าจริงที่ลูกค้าเลือกไว้ ทำให้ความเกี่ยวข้อง (Relevance) ต่ำ
+3. เสนอส่วนลดสูงเกินไปตั้งแต่ Ad Set แรก (Day 0-1) ทำให้ Margin เสียโดยไม่จำเป็น เพราะลูกค้าจำนวนมากกลับมาซื้อได้โดยไม่ต้องมีส่วนลดเลย ควรไล่ระดับ Incentive ตามความเร่งด่วนจริง
+
+---
+
+## Step 305: โครงสร้างแคมเปญ Full-Funnel E-commerce
+
+### หลักการออกแบบโครงสร้างที่ใช้งานได้จริง
+
+โครงสร้างแคมเปญ Full-Funnel ที่แนะนำสำหรับอีคอมเมิร์ซส่วนใหญ่ ประกอบด้วย 3 Campaign หลัก แต่ละ Campaign มี Ad Set ย่อยตาม Funnel Stage:
+
+```
+Campaign 1: PROSPECTING (Cold Traffic)
+  └─ Ad Set: Advantage+ Audience (กว้าง) — Objective: Sales
+       Exclude: Purchasers 180 วัน, Website Visitors 30 วัน
+
+Campaign 2: RETARGETING (Warm/Hot Traffic)
+  ├─ Ad Set: View Content but not Add to Cart (14 วัน)
+  ├─ Ad Set: Add to Cart but not Checkout (7 วัน)
+  └─ Ad Set: Initiate Checkout but not Purchase (3 วัน)
+       ทุก Ad Set Exclude: Purchasers (event ล่าสุด)
+
+Campaign 3: LOYALTY / CROSS-SELL (ลูกค้าเดิม)
+  ├─ Ad Set: Purchased 30-90 วัน — Cross-sell สินค้าเสริม
+  └─ Ad Set: Purchased 90-180 วัน — Win-back Campaign
+```
+
+### การจัดสรรงบประมาณระหว่าง 3 Campaign
+
+อัตราส่วนที่ใช้ได้จริงสำหรับธุรกิจอีคอมเมิร์ซส่วนใหญ่ (ปรับตามข้อมูลจริงของแต่ละธุรกิจ):
+
+| Campaign | สัดส่วนงบแนะนำ | เหตุผล |
+|---|---|---|
+| Prospecting | 55-65% | ต้องมี Traffic ใหม่เข้ามาต่อเนื่องเพื่อเติม Funnel |
+| Retargeting | 25-35% | CPA ต่ำกว่า Prospecting มาก แต่ Pool คนจำกัด ใส่งบมากเกินจะ Frequency สูงเร็ว |
+| Loyalty/Cross-sell | 5-15% | ธุรกิจที่มีสินค้าให้ซื้อซ้ำเยอะควรเพิ่มสัดส่วนนี้ |
+
+สัดส่วนนี้ไม่ใช่กฎตายตัว ธุรกิจที่มี Traffic เดิมสะสมมากอยู่แล้ว (เช่น เพิ่งเริ่มทำ Full-Funnel หลังยิง Prospecting มานาน) อาจต้องเพิ่มสัดส่วน Retargeting ชั่วคราวเพื่อ "เก็บกวาด" Warm Audience ที่สะสมไว้ก่อน
+
+### ใช้ CBO หรือ ABO สำหรับแต่ละ Campaign
+
+Campaign Prospecting ที่มักมีแค่ 1 Ad Set แนะนำใช้ ABO (Ad Set Budget Optimization) เพื่อควบคุมงบชัดเจน ส่วน Campaign Retargeting ที่มีหลาย Ad Set ตาม Funnel Stage แนะนำใช้ CBO (Campaign Budget Optimization) เพื่อให้ระบบกระจายงบไปยัง Ad Set ที่ให้ผลลัพธ์ดีที่สุดในแต่ละช่วงเวลาโดยอัตโนมัติ (อ้างอิงรายละเอียดเต็มจาก Part 018)
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. มีแค่ Campaign Prospecting อย่างเดียวโดยไม่มี Retargeting เลย ทำให้เสีย Warm Traffic ที่มี Intent สูงไปฟรี ๆ
+2. สร้าง Retargeting Ad Set ที่ Audience เล็กเกินไป (Overlap กันเองระหว่าง Ad Set) ทำให้แข่งกันเองใน Auction
+3. ไม่มี Campaign Loyalty เลย ทำให้ต้องหาลูกค้าใหม่ตลอดเวลาโดยไม่ได้ประโยชน์จากฐานลูกค้าเดิมที่ต้นทุนต่ำกว่ามาก
+
+---
+
+## Step 306: วางแผนแคมเปญเทศกาลอีคอมเมิร์ซ (9.9, 11.11, 12.12)
+
+### ทำไมเทศกาลเหล่านี้สำคัญมากสำหรับอีคอมเมิร์ซไทย
+
+วัน 9.9, 11.11, 12.12 (รวมถึง 10.10, 12.12 และ Double Date อื่น ๆ) กลายเป็นเทศกาลช้อปปิ้งที่ผู้บริโภคไทยรอคอย เพราะ Marketplace ทำการตลาดหนักมากในช่วงนี้ ทำให้ Traffic โดยรวมของอีคอมเมิร์ซพุ่งสูงกว่าปกติหลายเท่า แต่ก็มาพร้อมกับ CPM ที่แพงขึ้นมากเพราะ Advertiser ทุกรายแข่งกันยิงพร้อมกัน
+
+### Timeline การวางแผนที่แนะนำ
+
+**T-30 วัน (1 เดือนก่อนเทศกาล):**
+เตรียม Creative, Copy, และ Offer ให้พร้อม ตรวจสอบสต็อกสินค้าและระบบหลังบ้าน (เชื่อมกับ Part 008) วางแผนงบประมาณล่วงหน้าและขอ Higher Spending Limit ถ้าจำเป็น (เชื่อมกับ Part 012)
+
+**T-14 วัน (2 สัปดาห์ก่อน):**
+เริ่ม "Warm-up Campaign" — ยิง Prospecting เบา ๆ เพื่อสร้าง Pixel Data และ Warm Audience ล่วงหน้า ไม่ควรรอไปยิงวันเทศกาลวันเดียวเพราะ Learning Phase จะยังไม่นิ่งพอดีวันสำคัญ
+
+**T-7 วัน (1 สัปดาห์ก่อน):**
+เริ่มปล่อย Teaser Content บอกโปรโมชั่นที่จะมา สร้าง Custom Audience จาก Engagement ของ Teaser นี้เพื่อใช้ Retarget ในวันจริง
+
+**T-1 วัน ถึง Day 0 (วันเทศกาล):**
+เพิ่มงบ Ad Set ที่ Performance ดีที่สุดแบบค่อยเป็นค่อยไป (ไม่เพิ่มเกิน 50% ต่อครั้งเพื่อไม่ Reset Learning Phase — อ้างอิง Part 018) เตรียมทีม Monitor แบบ Real-time เพราะ CPM/Auction Dynamic เปลี่ยนเร็วมากในวันเทศกาล
+
+**T+1 ถึง T+3 (หลังเทศกาล):**
+เปิด Retargeting Campaign ไล่จับกลุ่มที่ Add to Cart/Initiate Checkout ในช่วงเทศกาลแต่ยังไม่ Checkout จบ (มักมีจำนวนมากเพราะระบบ Marketplace/เว็บไซต์อาจล้นในช่วง Peak Time)
+
+### กลยุทธ์เฉพาะสำหรับวันเทศกาล
+
+- **Bundle Deal เฉพาะกิจ** เช่น "ซื้อ 2 แถม 1 เฉพาะวัน 11.11" เพื่อเพิ่ม AOV ในช่วงที่ Traffic สูง
+- **Countdown Creative** ใช้ตัวจับเวลาถอยหลังในโฆษณาเพื่อสร้าง Urgency
+- **แยก Budget สำรองสำหรับ "Fire-fighting"** เผื่อ Ad Set ที่ Performance ดีเกินคาดต้องการงบเพิ่มกลางวัน ไม่ควรใช้งบจนหมดตั้งแต่เช้า
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. เริ่มเตรียมตัวช้าเกินไป (1-2 วันก่อนเทศกาล) ทำให้ Ad Set ยังติด Learning Phase อยู่ในวันสำคัญที่สุด
+2. ไม่เตรียมงบสำรองสำหรับ Retargeting หลังเทศกาล ทำให้พลาดโอกาสเก็บ Warm Traffic จำนวนมากที่เกิดขึ้นช่วง Peak
+3. ตั้งราคา/โปรโมชั่นเดียวกันทุกปีโดยไม่ดูคู่แข่งใน Facebook Ad Library ก่อน ทำให้ Offer ไม่น่าดึงดูดเพียงพอเมื่อเทียบกับตลาด
+
+---
+
+## Step 307: กลยุทธ์ Creative Bundling/Upsell เพื่อเพิ่ม AOV
+
+### ทำไม AOV คือคานงัดที่ถูกมองข้าม
+
+นักยิงแอดจำนวนมากโฟกัสที่การลด CPA อย่างเดียว แต่ลืมว่าการเพิ่ม AOV (Average Order Value) มีผลต่อ ROAS โดยตรงเช่นกัน และมักทำได้ง่ายกว่าการลด CPA เพราะไม่ต้องแข่งกับ Auction เลย เป็นเรื่องของ Creative และ Offer Design ล้วน ๆ
+
+### เทคนิค Bundling ที่ใช้ได้จริงในโฆษณา
+
+1. **Bundle แบบ "ซื้อคู่ถูกกว่า"** — แสดงราคาสินค้าเดี่ยวเทียบกับราคา Bundle ในภาพเดียวกันชัด ๆ เพื่อให้เห็น Value ทันที
+2. **Bundle แบบ "ครบเซ็ต"** — จับสินค้าที่ใช้ร่วมกัน (เช่น แชมพู + ครีมนวด) มาขายเป็นชุด บอกเล่าเป็น "Routine" หรือ "Solution" แบบเบ็ดเสร็จ ไม่ใช่แค่ลดราคา
+3. **Volume Discount Tier** — เช่น "ซื้อ 1 ราคาปกติ ซื้อ 3 ลด 15% ซื้อ 5 ลด 25%" แสดงเป็น Carousel ที่ไล่ระดับ ทำให้ลูกค้าตัดสินใจซื้อจำนวนมากขึ้นเอง
+
+### เทคนิค Upsell ผ่าน Creative และ Landing Page
+
+- **Post-purchase Upsell Ad** — สร้าง Custom Audience จากคนที่ Purchase ไปแล้วใน 0-3 วัน ยิงโฆษณาเสนอสินค้าเสริมที่เข้ากับสิ่งที่ซื้อไปแล้ว (เช่น ซื้อกล้องไปแล้ว เสนอเมมโมรีการ์ด/กระเป๋ากล้อง)
+- **Landing Page ที่มี Upsell Pop-up ก่อน Checkout** — ทำงานร่วมกับทีม Web Developer เพื่อเสนอสินค้าเสริมราคาไม่แพงตอนใกล้ Checkout (เชื่อมกับ Part 054-055 เรื่อง CRO)
+- **Free Gift with Minimum Purchase** — "ซื้อครบ 990 บาทรับของแถม" กระตุ้นให้ลูกค้าเติมตะกร้าให้ถึงเกณฑ์ ซึ่งมักทำให้ AOV เพิ่มขึ้นมากกว่ามูลค่าของแถมที่เสียไป
+
+### ตัวอย่างการคำนวณผลกระทบของ AOV ต่อ ROAS
+
+สมมติร้านมี CPA คงที่ 200 บาทต่อ Order ถ้าเพิ่ม AOV จาก 500 บาท เป็น 650 บาท (เพิ่ม 30%) ด้วยกลยุทธ์ Bundle โดยไม่ต้องเพิ่มงบโฆษณาเลย:
+
+| | ก่อน Bundle | หลัง Bundle |
+|---|---|---|
+| AOV | 500 บาท | 650 บาท |
+| CPA | 200 บาท | 200 บาท |
+| ROAS | 2.5 | 3.25 |
+
+ROAS เพิ่มขึ้น 30% โดยไม่ต้องแก้ Targeting หรือ Creative เพื่อลด CPA เลย แสดงให้เห็นว่า AOV เป็นคานงัดที่คุ้มค่ามากและมักถูกมองข้าม
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. ทำ Bundle/Upsell แต่ไม่ได้สื่อสารมูลค่า (Value) ให้ชัดในโฆษณา ลูกค้าไม่เห็นว่าคุ้มกว่าซื้อแยกยังไง
+2. ตั้งเกณฑ์ Free Gift with Purchase สูงเกินความเป็นจริงของ AOV เฉลี่ย ทำให้ลูกค้าไม่พยายามไปถึงเกณฑ์
+3. เสนอ Upsell ที่ไม่เกี่ยวข้องกับสินค้าที่ซื้อไปเลย ทำให้ Ad Relevance ต่ำและดูเหมือนสแปม
+
+---
+
+## Step 308: KPI เฉพาะทางอีคอมเมิร์ซ
+
+### AOV (Average Order Value)
+
+คำนวณจาก Total Revenue หารด้วยจำนวน Order ทั้งหมด ควร Track แยกตาม Campaign และ Funnel Stage เพราะ AOV ของ Prospecting มักต่ำกว่า Retargeting/Loyalty (ลูกค้าเดิมกล้าซื้อมากขึ้นเพราะไว้ใจแล้ว)
+
+### Repeat Purchase Rate (RPR)
+
+คำนวณจากจำนวนลูกค้าที่ซื้อมากกว่า 1 ครั้ง หารด้วยจำนวนลูกค้าทั้งหมดในช่วงเวลาที่กำหนด (เช่น 90 วัน) ตัวเลขนี้สำคัญมากเพราะบอกว่าธุรกิจพึ่งพา Prospecting ตลอดไปหรือสร้าง Loyalty ได้จริง ธุรกิจอีคอมเมิร์ซที่ดีควรมี RPR อย่างน้อย 20-30% ขึ้นไป (แตกต่างกันมากตามหมวดสินค้า สินค้าอุปโภคบริโภคควรสูงกว่านี้มาก)
+
+### ROAS by SKU
+
+การดู ROAS รวมทั้งบัญชีอาจซ่อนความจริงว่าบางสินค้ากำลังแบก (Subsidize) สินค้าอื่นอยู่ ควรดึงรายงาน Catalog Performance (Commerce Manager → Catalog → Overview → Diagnostics) หรือเชื่อม Google Sheets/Looker Studio (Part 091) เพื่อดู ROAS แยกตาม SKU/Product Set แล้วตัดสินใจว่าจะเพิ่มงบ SKU ไหน หรือถอด SKU ไหนออกจาก Catalog Ads
+
+### CAC Payback Period และ LTV:CAC Ratio
+
+สำหรับธุรกิจที่มีสินค้าซื้อซ้ำ ควรคำนวณ LTV (Lifetime Value) เทียบกับ CAC (Customer Acquisition Cost) ไม่ใช่ดูแค่ ROAS ของ Order แรก อัตราส่วน LTV:CAC ที่ดีควรอยู่ที่ 3:1 ขึ้นไป (เชื่อมกับแนวคิด Unit Economics จาก Part 003)
+
+### ตารางสรุป KPI Dashboard ที่แนะนำ
+
+| KPI | ความถี่ในการดู | เป้าหมายทั่วไป (ปรับตามธุรกิจ) |
+|---|---|---|
+| ROAS รวม | รายวัน | ≥ Break-even ROAS ที่คำนวณจาก Part 004 |
+| AOV | รายสัปดาห์ | เพิ่มขึ้นต่อเนื่อง (Trend ขาขึ้น) |
+| Repeat Purchase Rate | รายเดือน | 20-30%+ (ตามหมวดสินค้า) |
+| ROAS by SKU | รายสัปดาห์ | ระบุ Top 20% SKU ที่ทำกำไรจริง |
+| LTV:CAC | รายไตรมาส | 3:1 ขึ้นไป |
+
+### ข้อผิดพลาดที่พบบ่อย
+
+1. ดู ROAS รวมทั้งบัญชีอย่างเดียวโดยไม่แยก SKU ทำให้ไม่รู้ว่าสินค้าไหนกำลังขาดทุนจริง
+2. ไม่ Track Repeat Purchase Rate เลย ทำให้ไม่รู้ว่าธุรกิจพึ่งพา Prospecting ตลอดไปหรือมี Loyalty Base ที่แข็งแรง
+3. ใช้ Break-even ROAS แบบเดียวกันสำหรับทุกสินค้า ทั้งที่ Margin ของแต่ละ SKU ต่างกันมาก
+
+---
+
+## Step 309: ข้อผิดพลาดที่พบบ่อยของธุรกิจอีคอมเมิร์ซบน Facebook Ads
+
+รวบรวมข้อผิดพลาดเชิงกลยุทธ์ระดับใหญ่ที่พบบ่อยที่สุดในธุรกิจอีคอมเมิร์ซไทย (นอกเหนือจากที่ระบุไว้ในแต่ละ Step ด้านบน):
+
+1. **ไม่มี Landing Page เฉพาะสำหรับแต่ละ Creative/Offer** — ยิงทุกโฆษณาไปหน้าเดียวกัน (หน้าแรกของเว็บ) ทำให้เสีย Conversion Rate เพราะลูกค้าต้องหาสินค้าเองต่อ ควรยิงตรงไปหน้าสินค้าหรือ Landing Page ที่ตรงกับ Creative เสมอ
+2. **ไม่ทดสอบ Free Shipping Threshold ที่เหมาะสม** — บางร้านตั้งค่าส่งฟรีสูงเกินไปจนลูกค้าไม่กล้าซื้อ บางร้านตั้งต่ำเกินไปจนแบก Margin ไม่ไหว ควร Test หาจุดที่สมดุลระหว่าง Conversion Rate และ Margin
+3. **ปล่อยให้ Catalog มีสินค้าหมดสต็อกแต่ยังยิง Dynamic Ads อยู่** — ทำให้ลูกค้าคลิกมาแล้วผิดหวัง เสีย Ad Spend และ Brand Trust ต้องเชื่อม Feed กับระบบสต็อกให้ Real-time (ดู Part 027)
+4. **ไม่มีระบบ Chat/CS ที่ตอบเร็วพอในช่วง Peak Time** — เมื่อ Traffic พุ่งจากโฆษณาแต่ทีม CS ตอบช้า ลูกค้าเปลี่ยนใจไปซื้อที่อื่น (เชื่อมกับ Part 008 เรื่องระบบหลังบ้าน)
+5. **มองข้าม Mobile Experience** — ลูกค้าอีคอมเมิร์ซไทยส่วนใหญ่ซื้อผ่านมือถือ แต่หลายร้านยังทดสอบ Checkout Flow บนคอมพิวเตอร์เป็นหลัก ทำให้พลาดปัญหา UX บนมือถือที่ทำให้ Conversion Rate ต่ำ
+6. **ไม่แยกงบและกลยุทธ์ระหว่างสินค้า Best-seller กับสินค้าใหม่** — สินค้าใหม่ที่ยังไม่มี Social Proof ต้องใช้กลยุทธ์ Creative ต่างจากสินค้า Best-seller ที่มีรีวิวจำนวนมากแล้ว
+7. **คำนวณ ROAS โดยไม่หัก Cost of Goods Sold (COGS) และค่าธรรมเนียม Payment Gateway** — ทำให้เข้าใจผิดว่าธุรกิจกำลังกำไรทั้งที่จริงยังขาดทุนอยู่ (เชื่อมกับ Unit Economics จาก Part 003)
+
+---
+
+## Step 310: Workshop — สร้างแผน Full-Funnel อีคอมเมิร์ซให้ร้านค้าออนไลน์ไทย
+
+### สถานการณ์จำลอง
+
+สมมติว่าคุณได้รับมอบหมายให้วางแผนแคมเปญ Facebook Ads ให้ร้านค้าออนไลน์สมมติ "ครัวคุณยาย" ที่ขายน้ำพริกและเครื่องแกงสำเร็จรูปพร้อมส่ง มีเว็บไซต์ของตัวเองที่รับ Checkout ได้ และมีหน้า Shopee ด้วย งบประมาณเดือนละ 60,000 บาท สินค้ามี Margin ประมาณ 45% AOV เฉลี่ยปัจจุบันอยู่ที่ 380 บาท
+
+### งานที่ต้องทำ
+
+**งานที่ 1 — วิเคราะห์และเลือกช่องทางหลัก**
+ตัดสินใจว่าจะยิงเข้าเว็บไซต์ตัวเองเป็นหลักหรือเข้า Shopee เป็นหลัก โดยอ้างอิงกรอบคิดจาก Step 302 เขียนเหตุผล 3-5 ข้อสนับสนุนการตัดสินใจ
+
+**งานที่ 2 — ออกแบบโครงสร้าง Full-Funnel**
+เขียนโครงสร้าง Campaign/Ad Set ตามแบบ Step 305 พร้อมระบุ Custom Audience และ Window ที่จะใช้ในแต่ละ Ad Set ให้เหมาะกับสินค้าประเภทอาหาร (ที่มักซื้อซ้ำเร็วกว่าสินค้าทั่วไป)
+
+**งานที่ 3 — จัดสรรงบประมาณ**
+แบ่งงบ 60,000 บาทต่อเดือนตามสัดส่วน Prospecting/Retargeting/Loyalty จาก Step 305 พร้อมคำนวณงบต่อวันของแต่ละ Ad Set
+
+**งานที่ 4 — วางแผน Cart Abandoner Retargeting**
+เขียน Message สำหรับ 3 Ad Set ตาม Timeline ใน Step 304 (Day 0-1, Day 1-3, Day 3-7) โดยเฉพาะสำหรับสินค้าอาหารที่ Perishable (ควรมี Urgency ด้าน "ความสดใหม่" ประกอบด้วย)
+
+**งานที่ 5 — ออกแบบ Bundle เพื่อเพิ่ม AOV**
+คิด Bundle อย่างน้อย 2 แบบที่เหมาะกับน้ำพริก/เครื่องแกง (เช่น Set รวมน้ำพริก 5 แบบ, Set คู่กับข้าวสาร) พร้อมคำนวณผลกระทบต่อ ROAS แบบในตัวอย่าง Step 307
+
+**งานที่ 6 — วางแผนแคมเปญ 12.12**
+ใช้ Timeline จาก Step 306 เขียนแผนงาน T-30 ถึง T+3 สำหรับร้าน "ครัวคุณยาย" โดยเฉพาะ ระบุว่าแต่ละช่วงต้องทำอะไรบ้าง
+
+**งานที่ 7 — กำหนด KPI Dashboard**
+เลือก KPI จาก Step 308 ที่เหมาะกับร้านนี้ และตั้งเป้าหมายตัวเลขที่เป็นรูปธรรม (เช่น AOV เป้าหมายหลัง Bundle, Repeat Purchase Rate เป้าหมายภายใน 3 เดือน)
+
+**งานที่ 8 — Peer Review**
+ถ้าเรียนเป็นกลุ่ม ให้แลกเปลี่ยนแผนกับเพื่อนร่วมเรียน 1 คน แล้ววิจารณ์แผนของกันและกันโดยอ้างอิงข้อผิดพลาดที่พบบ่อยจาก Step 309 ว่าแผนที่เขียนพลาดประเด็นไหนไปหรือไม่
+
+---
+
+## Case Study: ร้าน "สวนผักออร์แกนิคบ้านทุ่ง" เปลี่ยนจากยิงเข้า Marketplace อย่างเดียว สู่ Full-Funnel เว็บไซต์ตัวเอง
+
+ร้านขายผักผลไม้ออร์แกนิคส่งตรงถึงบ้าน (สมมติ) เริ่มต้นด้วยการยิงโฆษณา Facebook เข้าหน้า Shopee ล้วน ๆ มาเป็นเวลา 1 ปี เพราะคิดว่าง่ายและไม่ต้องดูแลเว็บไซต์ ผลลัพธ์ที่เห็นใน Ads Manager คือ ROAS เฉลี่ย 1.4 ซึ่งเจ้าของร้านคิดว่าเกือบขาดทุนและกำลังจะเลิกยิงแอด
+
+**การตรวจสอบ:** เมื่อทีมที่ปรึกษาเข้าไปดูข้อมูลจริงจาก Seller Center ของ Shopee เทียบกับ Amount Spent พบว่า Order จริงที่เกิดขึ้นในช่วงเวลาเดียวกันสูงกว่าที่ Ads Manager รายงานถึง 2.3 เท่า เพราะ Facebook ไม่เห็น Purchase Event บน Shopee เลย (ตรงกับปัญหาที่อธิบายใน Step 303) เมื่อคำนวณ ROAS จริงจากข้อมูล Seller Center ได้ค่าประมาณ 3.2 ซึ่งเป็นธุรกิจที่ทำกำไรได้จริง ไม่ใช่ขาดทุนตามที่เข้าใจผิด
+
+**การปรับกลยุทธ์:** ทีมแนะนำให้ร้านสร้างเว็บไซต์ Landing Page ง่าย ๆ พร้อมระบบ Checkout ผ่าน LINE OA (รับออเดอร์และโอนเงินยืนยัน) ติดตั้ง Pixel และ CAPI เต็มรูปแบบ แล้วค่อย ๆ ย้ายงบจาก Shopee-only มาเป็น Full-Funnel ที่ยิงเข้าเว็บไซต์ตัวเองเป็นหลัก (70% ของงบ) และคง Shopee ไว้เป็นช่องทางเสริมสำหรับลูกค้าที่ไม่คุ้นเว็บไซต์ (30%)
+
+**ผลลัพธ์หลัง 4 เดือน:** ROAS ที่วัดได้ตรงจาก Pixel ของเว็บไซต์อยู่ที่ 4.1 (สูงกว่าที่วัดได้จาก Shopee เดิมมาก เพราะวัดตรงและแม่นยำ) Repeat Purchase Rate เพิ่มจากที่ไม่เคยวัดได้เลย (เพราะไม่มี First-party Data) มาอยู่ที่ 34% เนื่องจากผักผลไม้เป็นสินค้าที่ซื้อซ้ำเร็ว ทีมสามารถทำ Loyalty Campaign ส่ง Custom Audience ของลูกค้าเดิมได้อย่างมีประสิทธิภาพเป็นครั้งแรก
+
+**บทเรียนสำคัญ:** ตัวเลข ROAS ที่เห็นใน Ads Manager ไม่ใช่ความจริงทั้งหมดเสมอไป โดยเฉพาะเมื่อยิงเข้า Marketplace การมีระบบ Tracking ที่แม่นยำ (ผ่านเว็บไซต์ตัวเอง) ไม่เพียงช่วยให้เห็นภาพจริง แต่ยังปลดล็อกความสามารถในการทำ Retargeting และ Loyalty ที่ Marketplace ทำให้ไม่ได้
+
+---
+
+## Checklist ท้ายบท
+
+- [ ] เข้าใจความแตกต่างของ Funnel Stage เฉพาะทางอีคอมเมิร์ซ (TOF/MOF/BOF) และ Window ที่เหมาะสมของแต่ละ Stage
+- [ ] ตัดสินใจได้ว่าธุรกิจควรยิงเข้าเว็บไซต์ตัวเองหรือ Marketplace เป็นหลัก พร้อมเหตุผลรองรับ
+- [ ] รู้วิธีแก้ปัญหา Tracking เมื่อยิงเข้า Marketplace อย่างน้อย 1 วิธี (Affiliate Link/โค้ดโปรโมชั่น/UTM+GA4)
+- [ ] ตั้งค่า Dynamic Ads for Cart Abandoners พร้อม Sequential Retargeting ตามระยะเวลา
+- [ ] มีโครงสร้าง Full-Funnel Campaign ครบทั้ง Prospecting/Retargeting/Loyalty
+- [ ] มีแผนแคมเปญเทศกาล (9.9/11.11/12.12) พร้อม Timeline ตั้งแต่ T-30 ถึง T+3
+- [ ] ออกแบบ Bundle/Upsell อย่างน้อย 1 ชุดเพื่อเพิ่ม AOV พร้อมคำนวณผลกระทบต่อ ROAS
+- [ ] ตั้ง KPI Dashboard ที่ครอบคลุม AOV, Repeat Purchase Rate, ROAS by SKU
+- [ ] ตรวจสอบว่าไม่ได้ทำผิดพลาดตามรายการใน Step 309
+- [ ] ทำ Workshop วางแผน Full-Funnel ให้ธุรกิจจริงหรือธุรกิจสมมติแล้วครบทั้ง 8 งาน
+
+## Workshop / แบบฝึกหัด
+
+ทำตามงานที่ 1–8 ใน Step 310 ให้ครบถ้วน โดยใช้ธุรกิจจริงของตัวเอง/ลูกค้า หรือธุรกิจสมมติ "ครัวคุณยาย" ก็ได้ ส่งงานเป็นเอกสารสรุป 2-3 หน้ากระดาษที่ครอบคลุม:
+
+1. การตัดสินใจช่องทางหลัก (เว็บไซต์/Marketplace) พร้อมเหตุผล
+2. Diagram โครงสร้าง Full-Funnel Campaign แบบเต็ม
+3. ตารางจัดสรรงบประมาณ
+4. แผนแคมเปญเทศกาลแบบ Timeline
+5. ตัวอย่าง Bundle/Upsell พร้อมการคำนวณ ROAS
+6. KPI Dashboard พร้อมเป้าหมายตัวเลข
+
+**แบบฝึกหัดเสริม:** เข้าไปสำรวจ Facebook Ad Library จริง ค้นหาแบรนด์อีคอมเมิร์ซไทยที่ยิงแอดอยู่ปัจจุบัน 3 แบรนด์ วิเคราะห์ว่าแต่ละแบรนด์ใช้กลยุทธ์ Bundle/Retargeting อย่างไรจากโฆษณาที่เห็น แล้วเทียบกับหลักการที่เรียนใน Part นี้
+
+## สรุปและเชื่อมไปยัง Part ถัดไป
+
+Part นี้ทำให้เห็นว่าอีคอมเมิร์ซคือธุรกิจที่ซับซ้อนกว่าที่คิด เพราะต้องจัดการทั้งเรื่อง Multi-channel (เว็บไซต์ vs Marketplace), Tracking ที่ไม่สมบูรณ์, และ Funnel ที่ต้องดูแลทั้ง Prospecting, Retargeting และ Loyalty ไปพร้อมกัน หลักการ Advantage+ Audience ที่เรียนใน Part 030 ยังใช้ได้เต็มที่กับ Prospecting Campaign ในที่นี้ ในขณะที่ Retargeting ยังต้องพึ่งพา Custom Audience ที่เจาะจงตาม Funnel Stage อย่างเคร่งครัด
+
+ใน Part 032 เราจะเปลี่ยนโฟกัสจากอีคอมเมิร์ซไปสู่ธุรกิจบริการ ร้านอาหาร และคลินิก ซึ่งมีลักษณะแตกต่างจากอีคอมเมิร์ซอย่างสิ้นเชิง เพราะเป้าหมายไม่ใช่การขายสินค้าออนไลน์ตรง แต่เป็นการสร้าง Foot Traffic หรือการจองนัด/บริการ ซึ่งต้องใช้ Radius Targeting, Store Traffic Objective และการจัดการ Compliance ที่เข้มงวดกว่า โดยเฉพาะธุรกิจคลินิกที่มีข้อจำกัดด้านนโยบายมากเป็นพิเศษ
+
+## อ้างอิง/แหล่งข้อมูลเพิ่มเติม
+
+- Meta Business Help Center: "About catalog ads" และ "Dynamic ads for cart abandonment"
+- Shopee Seller Education Hub: "Affiliate Marketing Program สำหรับผู้ขาย"
+- Lazada University: "Universal Link และ Affiliate Tracking"
+- Google Analytics 4 Help: "Set up conversion tracking for outbound link clicks"
+- Meta for Business: "Seasonal advertising guide" สำหรับการวางแผนแคมเปญเทศกาล
+- บทความวิเคราะห์ Baymard Institute เรื่อง Cart Abandonment Rate (อัปเดตทุกปี ใช้เป็น Benchmark อุตสาหกรรม)
+- ชุมชน Thai E-commerce Association สำหรับข้อมูลเทรนด์อีคอมเมิร์ซไทยล่าสุด
