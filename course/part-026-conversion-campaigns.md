@@ -578,6 +578,8 @@ Sales Objective คือจุดสุดยอดของสิ่งที�
 - Meta Business Help Center: "About the attribution window setting"
 - Meta for Business: "Best practices for e-commerce advertisers on Facebook"
 - Meta Business Help Center: "Diagnose and fix issues with your Pixel or Conversions API events"
+- Meta Business Help Center: "About value optimization"
+- Meta for Business: "Retail and e-commerce advertising guide"
 
 ### บันทึกเพิ่มเติมสำหรับผู้เรียน
 
