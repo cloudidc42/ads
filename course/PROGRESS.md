@@ -153,8 +153,8 @@
 |---|---|---|
 | 094 | เริ่มต้นรับงานยิงแอด/เปิดเอเจนซี่ | 🔴 |
 | 095 | การเสนอราคา, Contract, Client Onboarding | 🔴 |
-| 096 | Client Reporting และ Communication มืออาชีพ | 🔴 |
-| 097 | การสร้างทีมยิงแอดและ SOP | 🔴 |
+| 096 | Client Reporting และ Communication มืออาชีพ | 🟢 `part-096-client-reporting-communication.md` |
+| 097 | การสร้างทีมยิงแอดและ SOP | 🟢 `part-097-building-team-sop.md` |
 
 ## Section L — World-Class Mastery: Case Studies & Advanced Strategy (Part 098–100)
 
