@@ -528,6 +528,10 @@ Website Custom Audience เป็น "Rolling Window" คือคนที่�
 
 ต้องเชื่อม IG Business/Creator Account เข้ากับ Business Manager ก่อน (ตามที่เรียนใน Part 011) ถ้ายังไม่เชื่อม ตัวเลือก "Instagram Account" จะไม่ปรากฏในหน้าสร้าง Custom Audience หรือปรากฏแต่ไม่มีข้อมูลให้เลือก
 
+**Q7: Custom Audience ที่ Exclude ไว้ในหลาย Ad Set พร้อมกัน จะทำให้บัญชีช้าลงหรือมีข้อจำกัดจำนวนไหม**
+
+Meta จำกัดจำนวน Custom Audience ที่ใช้ได้ต่อ Ad Set ไว้ที่ 25 Audience รวมทั้ง Include และ Exclude (ทั้ง Custom Audience, Saved Audience segment, และ Lookalike) และจำกัดจำนวน Custom Audience ทั้งหมดที่สร้างได้ต่อ Ad Account ไว้ที่ 500 Audience ธุรกิจทั่วไปไม่มีทางชนเพดานนี้ถ้าดูแล Library ให้เป็นระบบ แต่เอเจนซี่ที่ดูแลลูกค้าหลายรายในบัญชีเดียวควรวางแผนตั้งชื่อและลบ Audience ที่ไม่ใช้แล้วเป็นระยะ เพื่อไม่ให้ชนเพดานโดยไม่รู้ตัว
+
 ## เจาะลึกเพิ่มเติม: ตารางเปรียบเทียบ "ความสด" ของแต่ละแหล่งข้อมูล
 
 การเลือกใช้ Custom Audience ประเภทไหนควรพิจารณาความสดของข้อมูล (Data Freshness) ควบคู่กับความแม่นยำเชิงตัวบุคคล (Identity Certainty) เสมอ ตารางนี้สรุปทั้งสองมิติไว้ให้เทียบง่าย:
