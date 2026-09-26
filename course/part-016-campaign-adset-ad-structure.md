@@ -87,6 +87,10 @@ Campaign (แคมเปญ)
 6. **Advantage Campaign Budget** — ชื่อใหม่ของฟีเจอร์ CBO ใน UI เวอร์ชันปัจจุบันที่รวม Automation เพิ่มเติม
 7. **Special Ad Category** — ต้องระบุถ้าธุรกิจอยู่ในหมวด Housing, Employment, Credit, หรือ Politics/Social Issues (เจาะลึกใน Part 020 Step 197) ถ้าเลือกผิดหรือไม่ระบุทั้งที่เข้าเงื่อนไข เสี่ยงถูก Reject หรือ Disable บัญชี
 
+### เมนูที่ต้องหาให้เจอในหน้าจอจริง (ปี 2026)
+
+ใน UI ปัจจุบันของ Ads Manager หน้า Create Campaign จะแสดง Objective เป็นการ์ดให้เลือกก่อน (Awareness, Traffic, Engagement, Leads, App Promotion, Sales) จากนั้นเมื่อเลือกแล้วจะเข้าสู่หน้า Campaign Settings ที่มี Toggle "Advantage Campaign Budget" อยู่ใกล้กับช่องกรอกชื่อแคมเปญ ส่วน Special Ad Category จะอยู่เป็น Dropdown ถัดจากชื่อแคมเปญเสมอ ควรตรวจสอบทุกครั้งก่อนกด Next ไปหน้า Ad Set เพราะกลับมาแก้ตรงนี้ทีหลังยากกว่าตอนตั้งค่าครั้งแรก
+
 ### สิ่งที่ Campaign Level "ไม่ได้" ควบคุม
 
 เพื่อไม่ให้สับสน ต้องรู้ด้วยว่า Campaign Level **ไม่ได้กำหนด** เรื่องต่อไปนี้ (เพราะอยู่ชั้นถัดไป): Audience, Placement, Creative, Ad Copy, Destination URL — ทั้งหมดนี้กำหนดที่ Ad Set หรือ Ad Level
@@ -121,6 +125,10 @@ Special Ad Category: ไม่มี (สินค้าทั่วไปไม
 ### ความสัมพันธ์ระหว่าง Ad Set กับ Pixel ที่ต้องระวัง
 
 ทุก Ad Set ที่เลือก Conversion Location = Website **ต้องมี Pixel ที่ผูกกับ Domain ที่ Verify แล้ว** ไม่เช่นนั้นจะไม่สามารถเลือก Conversion Event ได้ครบ หรือระบบจะเตือนว่า Event ที่เลือกไม่อยู่ใน Priority Event List ของ Domain นั้น (เชื่อมโยงกับ Part 015 Step 145 โดยตรง)
+
+### ความสัมพันธ์ระหว่าง Optimization Goal และ Bid Strategy ที่มักสับสน
+
+หลายคนสับสนระหว่าง "Performance Goal" (ต้องการให้ Optimize เพื่อผลลัพธ์อะไร) กับ "Bid Strategy" (จะประมูลอย่างไรเพื่อให้ได้ผลลัพธ์นั้น) — ทั้งสองเป็นคนละเรื่องที่ทำงานร่วมกัน ตัวอย่าง: Performance Goal = "Maximize number of conversions" บอกว่าต้องการ Conversion ให้มากที่สุด ส่วน Bid Strategy = "Cost Cap" บอกว่ายอมจ่ายได้ไม่เกินราคาเท่าไหร่ต่อ Conversion หนึ่งครั้ง ถ้าตั้ง Cost Cap ต่ำเกินไปเทียบกับตลาดจริง ระบบอาจใช้งบไม่หมดเพราะหาคนในราคานั้นไม่ได้เพียงพอ (รายละเอียดเชิงลึกเรื่อง Bid Strategy ทั้งหมดอยู่ใน Part 018)
 
 ### ตัวอย่าง Ad Set ที่ตั้งค่าสมบูรณ์
 
@@ -161,6 +169,10 @@ URL Parameters: utm_source=facebook&utm_medium=paid&utm_campaign={{campaign.name
 
 การใช้ Dynamic Parameter อย่าง `{{campaign.name}}` และ `{{ad.name}}` ทำให้ Facebook ดึงชื่อ Campaign/Ad จริงมาแทนอัตโนมัติในทุกลิงก์ ไม่ต้องพิมพ์ UTM มือทีละ Ad ซึ่งเสี่ยงพิมพ์ผิดหรือลืมใส่
 
+### การเลือก Facebook Page/Instagram Account ที่ถูกต้อง
+
+ธุรกิจที่มีหลาย Page (เช่น Page หลักกับ Page แคมเปญเฉพาะกิจ) ต้องระมัดระวังเรื่องการเลือก Identity ให้ตรงกับ Page ที่ต้องการสร้างความน่าเชื่อถือระยะยาว เพราะ Engagement (Like, Comment, Share) ที่เกิดจากโฆษณาจะไปสะสมอยู่ที่ Page ที่เลือกไว้ ถ้าเลือกผิด Page ที่ไม่ได้ดูแลต่อ Engagement ที่มีค่าจะสูญเปล่าไปกับ Page ที่ไม่มีใครดูแลในระยะยาว
+
 ### จุดที่มือใหม่พลาดบ่อยระดับ Ad
 
 - Destination URL ไม่ตรงกับ Domain ที่ Pixel ติดตั้งไว้ (เช่น ลิงก์ไปหน้า Landing Page ใหม่ที่ยังไม่ได้ฝัง Pixel) ทำให้เสีย Data ทั้งแคมเปญ
@@ -177,6 +189,10 @@ URL Parameters: utm_source=facebook&utm_medium=paid&utm_campaign={{campaign.name
 - กรองข้อมูลใน Ads Manager ด้วย Search/Filter ได้เร็ว
 - ทำ Report ผ่าน Excel/Google Sheets/Looker Studio ได้ง่ายเพราะแยกมิติต่าง ๆ ได้จากชื่อโดยตรง (Breakdown by Naming Pattern)
 - ทีมใหม่ที่เข้ามาดูแลต่อเข้าใจโครงสร้างได้ทันทีโดยไม่ต้องเปิดดูการตั้งค่าทีละอัน
+
+### หลักการเสริม: ใช้ Underscore แทน Space และหลีกเลี่ยงอักขระพิเศษ
+
+ควรใช้ `_` (Underscore) คั่นแต่ละส่วนของชื่อ แทนการเว้นวรรค เพราะเมื่อ Export ข้อมูลไปทำ Report ผ่าน Excel/Google Sheets การแยกคอลัมน์ด้วย Delimiter (Text to Columns) จะทำได้ง่ายกว่ามาก และหลีกเลี่ยงอักขระพิเศษ เช่น `/`, `:`, `#` ที่บางระบบ Export/Import อาจตีความผิดพลาดได้
 
 ### สูตร Naming Convention ที่แนะนำ
 

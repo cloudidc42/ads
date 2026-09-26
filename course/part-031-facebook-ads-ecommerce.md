@@ -583,6 +583,8 @@ Part นี้ทำให้เห็นว่าอีคอมเมิร์
 
 หลักการเรื่อง Full-Funnel, Custom Audience ตาม Window เวลา และ Sequential Retargeting ที่เรียนใน Part นี้ ยังนำไปประยุกต์ใช้ได้กับธุรกิจบริการเช่นกัน เพียงแต่ Conversion Event จะเปลี่ยนจาก Purchase เป็น Booking/Appointment ซึ่งจะอธิบายรายละเอียดต่อใน Part ถัดไป
 
+จำไว้ว่าอีคอมเมิร์ซคือธุรกิจที่ "ชนะด้วยรายละเอียด" มากกว่าธุรกิจประเภทอื่น ความแตกต่างระหว่างร้านที่ทำกำไรได้จริงกับร้านที่ยิงแอดแล้วขาดทุนมักอยู่ที่การจัดการ Funnel, Tracking และ AOV อย่างเป็นระบบ ไม่ใช่แค่การหา Creative ที่ไวรัลเพียงอย่างเดียว
+
 ## อ้างอิง/แหล่งข้อมูลเพิ่มเติม
 
 - Meta Business Help Center: "About catalog ads" และ "Dynamic ads for cart abandonment"
